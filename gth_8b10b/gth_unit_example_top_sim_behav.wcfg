@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="gth_unit_example_top_sim_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="gth_unit_example_top_sim" />
+            <top_module name="vcomponents" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="10460650fs"></ZoomStartTime>
+      <ZoomEndTime time="10518951fs"></ZoomEndTime>
+      <Cursor1Time time="10493495fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="293"></NameColumnWidth>
+      <ValueColumnWidth column_width="123"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="33" />
+   <wvobject type="logic" fp_name="/gth_unit_example_top_sim/ch0_gthxn">
+      <obj_property name="ElementShortName">ch0_gthxn</obj_property>
+      <obj_property name="ObjectShortName">ch0_gthxn</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/gth_unit_example_top_sim/ch0_gthxp">
+      <obj_property name="ElementShortName">ch0_gthxp</obj_property>
+      <obj_property name="ObjectShortName">ch0_gthxp</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/gth_unit_example_top_sim/mgtrefclk1_x0y3">
+      <obj_property name="ElementShortName">mgtrefclk1_x0y3</obj_property>
+      <obj_property name="ObjectShortName">mgtrefclk1_x0y3</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/gth_unit_example_top_sim/hb_gtwiz_reset_clk_freerun">
+      <obj_property name="ElementShortName">hb_gtwiz_reset_clk_freerun</obj_property>
+      <obj_property name="ObjectShortName">hb_gtwiz_reset_clk_freerun</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/gth_unit_example_top_sim/hb_gtwiz_reset_all">
+      <obj_property name="ElementShortName">hb_gtwiz_reset_all</obj_property>
+      <obj_property name="ObjectShortName">hb_gtwiz_reset_all</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/gth_unit_example_top_sim/link_down_latched_reset">
+      <obj_property name="ElementShortName">link_down_latched_reset</obj_property>
+      <obj_property name="ObjectShortName">link_down_latched_reset</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/gth_unit_example_top_sim/link_status">
+      <obj_property name="ElementShortName">link_status</obj_property>
+      <obj_property name="ObjectShortName">link_status</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/gth_unit_example_top_sim/link_down_latched">
+      <obj_property name="ElementShortName">link_down_latched</obj_property>
+      <obj_property name="ObjectShortName">link_down_latched</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/gth_unit_example_top_sim/simulation_timeout_check">
+      <obj_property name="ElementShortName">simulation_timeout_check</obj_property>
+      <obj_property name="ObjectShortName">simulation_timeout_check</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/gth_unit_example_top_sim/link_up_ctr">
+      <obj_property name="ElementShortName">link_up_ctr[10:0]</obj_property>
+      <obj_property name="ObjectShortName">link_up_ctr[10:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/gth_unit_example_top_sim/link_stable">
+      <obj_property name="ElementShortName">link_stable</obj_property>
+      <obj_property name="ObjectShortName">link_stable</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/gth_unit_example_top_sim/example_top_inst/hb0_gtwiz_userdata_tx_int">
+      <obj_property name="ElementShortName">hb0_gtwiz_userdata_tx_int[31:0]</obj_property>
+      <obj_property name="ObjectShortName">hb0_gtwiz_userdata_tx_int[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/gth_unit_example_top_sim/example_top_inst/hb0_gtwiz_userclk_rx_active_int">
+      <obj_property name="ElementShortName">hb0_gtwiz_userclk_rx_active_int[0:0]</obj_property>
+      <obj_property name="ObjectShortName">hb0_gtwiz_userclk_rx_active_int[0:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/gth_unit_example_top_sim/example_top_inst/hb0_gtwiz_userclk_tx_usrclk2_int">
+      <obj_property name="ElementShortName">hb0_gtwiz_userclk_tx_usrclk2_int[0:0]</obj_property>
+      <obj_property name="ObjectShortName">hb0_gtwiz_userclk_tx_usrclk2_int[0:0]</obj_property>
+   </wvobject>
+   <wvobject type="vbus" fp_name="vbus433">
+      <obj_property name="label">tx_to_rx_write_userdata_tx_in</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_write[80]">
+         <obj_property name="ElementShortName">[80]</obj_property>
+         <obj_property name="ObjectShortName">[80]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_write[79]">
+         <obj_property name="ElementShortName">[79]</obj_property>
+         <obj_property name="ObjectShortName">[79]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_write[78]">
+         <obj_property name="ElementShortName">[78]</obj_property>
+         <obj_property name="ObjectShortName">[78]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_write[77]">
+         <obj_property name="ElementShortName">[77]</obj_property>
+         <obj_property name="ObjectShortName">[77]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_write[76]">
+         <obj_property name="ElementShortName">[76]</obj_property>
+         <obj_property name="ObjectShortName">[76]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_write[75]">
+         <obj_property name="ElementShortName">[75]</obj_property>
+         <obj_property name="ObjectShortName">[75]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_write[74]">
+         <obj_property name="ElementShortName">[74]</obj_property>
+         <obj_property name="ObjectShortName">[74]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_write[73]">
+         <obj_property name="ElementShortName">[73]</obj_property>
+         <obj_property name="ObjectShortName">[73]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_write[72]">
+         <obj_property name="ElementShortName">[72]</obj_property>
+         <obj_property name="ObjectShortName">[72]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_write[71]">
+         <obj_property name="ElementShortName">[71]</obj_property>
+         <obj_property name="ObjectShortName">[71]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_write[70]">
+         <obj_property name="ElementShortName">[70]</obj_property>
+         <obj_property name="ObjectShortName">[70]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_write[69]">
+         <obj_property name="ElementShortName">[69]</obj_property>
+         <obj_property name="ObjectShortName">[69]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_write[68]">
+         <obj_property name="ElementShortName">[68]</obj_property>
+         <obj_property name="ObjectShortName">[68]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_write[67]">
+         <obj_property name="ElementShortName">[67]</obj_property>
+         <obj_property name="ObjectShortName">[67]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_write[66]">
+         <obj_property name="ElementShortName">[66]</obj_property>
+         <obj_property name="ObjectShortName">[66]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_write[65]">
+         <obj_property name="ElementShortName">[65]</obj_property>
+         <obj_property name="ObjectShortName">[65]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_write[64]">
+         <obj_property name="ElementShortName">[64]</obj_property>
+         <obj_property name="ObjectShortName">[64]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_write[63]">
+         <obj_property name="ElementShortName">[63]</obj_property>
+         <obj_property name="ObjectShortName">[63]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_write[62]">
+         <obj_property name="ElementShortName">[62]</obj_property>
+         <obj_property name="ObjectShortName">[62]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_write[61]">
+         <obj_property name="ElementShortName">[61]</obj_property>
+         <obj_property name="ObjectShortName">[61]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_write[60]">
+         <obj_property name="ElementShortName">[60]</obj_property>
+         <obj_property name="ObjectShortName">[60]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_write[59]">
+         <obj_property name="ElementShortName">[59]</obj_property>
+         <obj_property name="ObjectShortName">[59]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_write[58]">
+         <obj_property name="ElementShortName">[58]</obj_property>
+         <obj_property name="ObjectShortName">[58]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_write[57]">
+         <obj_property name="ElementShortName">[57]</obj_property>
+         <obj_property name="ObjectShortName">[57]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_write[56]">
+         <obj_property name="ElementShortName">[56]</obj_property>
+         <obj_property name="ObjectShortName">[56]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_write[55]">
+         <obj_property name="ElementShortName">[55]</obj_property>
+         <obj_property name="ObjectShortName">[55]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_write[54]">
+         <obj_property name="ElementShortName">[54]</obj_property>
+         <obj_property name="ObjectShortName">[54]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_write[53]">
+         <obj_property name="ElementShortName">[53]</obj_property>
+         <obj_property name="ObjectShortName">[53]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_write[52]">
+         <obj_property name="ElementShortName">[52]</obj_property>
+         <obj_property name="ObjectShortName">[52]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_write[51]">
+         <obj_property name="ElementShortName">[51]</obj_property>
+         <obj_property name="ObjectShortName">[51]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_write[50]">
+         <obj_property name="ElementShortName">[50]</obj_property>
+         <obj_property name="ObjectShortName">[50]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_write[49]">
+         <obj_property name="ElementShortName">[49]</obj_property>
+         <obj_property name="ObjectShortName">[49]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="vbus" fp_name="vbus272">
+      <obj_property name="label">tx_to_rx_write_userdata_tx_out</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_read[80]">
+         <obj_property name="ElementShortName">[80]</obj_property>
+         <obj_property name="ObjectShortName">[80]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_read[79]">
+         <obj_property name="ElementShortName">[79]</obj_property>
+         <obj_property name="ObjectShortName">[79]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_read[78]">
+         <obj_property name="ElementShortName">[78]</obj_property>
+         <obj_property name="ObjectShortName">[78]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_read[77]">
+         <obj_property name="ElementShortName">[77]</obj_property>
+         <obj_property name="ObjectShortName">[77]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_read[76]">
+         <obj_property name="ElementShortName">[76]</obj_property>
+         <obj_property name="ObjectShortName">[76]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_read[75]">
+         <obj_property name="ElementShortName">[75]</obj_property>
+         <obj_property name="ObjectShortName">[75]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_read[74]">
+         <obj_property name="ElementShortName">[74]</obj_property>
+         <obj_property name="ObjectShortName">[74]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_read[73]">
+         <obj_property name="ElementShortName">[73]</obj_property>
+         <obj_property name="ObjectShortName">[73]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_read[72]">
+         <obj_property name="ElementShortName">[72]</obj_property>
+         <obj_property name="ObjectShortName">[72]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_read[71]">
+         <obj_property name="ElementShortName">[71]</obj_property>
+         <obj_property name="ObjectShortName">[71]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_read[70]">
+         <obj_property name="ElementShortName">[70]</obj_property>
+         <obj_property name="ObjectShortName">[70]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_read[69]">
+         <obj_property name="ElementShortName">[69]</obj_property>
+         <obj_property name="ObjectShortName">[69]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_read[68]">
+         <obj_property name="ElementShortName">[68]</obj_property>
+         <obj_property name="ObjectShortName">[68]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_read[67]">
+         <obj_property name="ElementShortName">[67]</obj_property>
+         <obj_property name="ObjectShortName">[67]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_read[66]">
+         <obj_property name="ElementShortName">[66]</obj_property>
+         <obj_property name="ObjectShortName">[66]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_read[65]">
+         <obj_property name="ElementShortName">[65]</obj_property>
+         <obj_property name="ObjectShortName">[65]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_read[64]">
+         <obj_property name="ElementShortName">[64]</obj_property>
+         <obj_property name="ObjectShortName">[64]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_read[63]">
+         <obj_property name="ElementShortName">[63]</obj_property>
+         <obj_property name="ObjectShortName">[63]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_read[62]">
+         <obj_property name="ElementShortName">[62]</obj_property>
+         <obj_property name="ObjectShortName">[62]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_read[61]">
+         <obj_property name="ElementShortName">[61]</obj_property>
+         <obj_property name="ObjectShortName">[61]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_read[60]">
+         <obj_property name="ElementShortName">[60]</obj_property>
+         <obj_property name="ObjectShortName">[60]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_read[59]">
+         <obj_property name="ElementShortName">[59]</obj_property>
+         <obj_property name="ObjectShortName">[59]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_read[58]">
+         <obj_property name="ElementShortName">[58]</obj_property>
+         <obj_property name="ObjectShortName">[58]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_read[57]">
+         <obj_property name="ElementShortName">[57]</obj_property>
+         <obj_property name="ObjectShortName">[57]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_read[56]">
+         <obj_property name="ElementShortName">[56]</obj_property>
+         <obj_property name="ObjectShortName">[56]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_read[55]">
+         <obj_property name="ElementShortName">[55]</obj_property>
+         <obj_property name="ObjectShortName">[55]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_read[54]">
+         <obj_property name="ElementShortName">[54]</obj_property>
+         <obj_property name="ObjectShortName">[54]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_read[53]">
+         <obj_property name="ElementShortName">[53]</obj_property>
+         <obj_property name="ObjectShortName">[53]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_read[52]">
+         <obj_property name="ElementShortName">[52]</obj_property>
+         <obj_property name="ObjectShortName">[52]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_read[51]">
+         <obj_property name="ElementShortName">[51]</obj_property>
+         <obj_property name="ObjectShortName">[51]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_read[50]">
+         <obj_property name="ElementShortName">[50]</obj_property>
+         <obj_property name="ObjectShortName">[50]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_read[49]">
+         <obj_property name="ElementShortName">[49]</obj_property>
+         <obj_property name="ObjectShortName">[49]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="array" fp_name="/gth_unit_example_top_sim/example_top_inst/hb0_gtwiz_userclk_rx_usrclk2_int">
+      <obj_property name="ElementShortName">hb0_gtwiz_userclk_rx_usrclk2_int[0:0]</obj_property>
+      <obj_property name="ObjectShortName">hb0_gtwiz_userclk_rx_usrclk2_int[0:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/gth_unit_example_top_sim/example_top_inst/hb0_gtwiz_userdata_rx_int">
+      <obj_property name="ElementShortName">hb0_gtwiz_userdata_rx_int[31:0]</obj_property>
+      <obj_property name="ObjectShortName">hb0_gtwiz_userdata_rx_int[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/init_done_int">
+      <obj_property name="ElementShortName">init_done_int</obj_property>
+      <obj_property name="ObjectShortName">init_done_int</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/gth_unit_example_top_sim/example_top_inst/hb0_gtwiz_userclk_tx_active_int">
+      <obj_property name="ElementShortName">hb0_gtwiz_userclk_tx_active_int[0:0]</obj_property>
+      <obj_property name="ObjectShortName">hb0_gtwiz_userclk_tx_active_int[0:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_write">
+      <obj_property name="ElementShortName">tx_to_rx_write[127:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_to_rx_write[127:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/gth_unit_example_top_sim/example_top_inst/tx_to_rx_read">
+      <obj_property name="ElementShortName">tx_to_rx_read[127:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_to_rx_read[127:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/cdc_fifo_tx_to_rx/srst">
+      <obj_property name="ElementShortName">srst</obj_property>
+      <obj_property name="ObjectShortName">srst</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/cdc_fifo_tx_to_rx/wr_clk">
+      <obj_property name="ElementShortName">wr_clk</obj_property>
+      <obj_property name="ObjectShortName">wr_clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/cdc_fifo_tx_to_rx/rd_clk">
+      <obj_property name="ElementShortName">rd_clk</obj_property>
+      <obj_property name="ObjectShortName">rd_clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/cdc_fifo_tx_to_rx/wr_en">
+      <obj_property name="ElementShortName">wr_en</obj_property>
+      <obj_property name="ObjectShortName">wr_en</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/cdc_fifo_tx_to_rx/rd_en">
+      <obj_property name="ElementShortName">rd_en</obj_property>
+      <obj_property name="ObjectShortName">rd_en</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/gth_unit_example_top_sim/example_top_inst/cdc_fifo_tx_to_rx/din">
+      <obj_property name="ElementShortName">din[127:0]</obj_property>
+      <obj_property name="ObjectShortName">din[127:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/gth_unit_example_top_sim/example_top_inst/cdc_fifo_tx_to_rx/dout">
+      <obj_property name="ElementShortName">dout[127:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[127:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/cdc_fifo_tx_to_rx/full">
+      <obj_property name="ElementShortName">full</obj_property>
+      <obj_property name="ObjectShortName">full</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/cdc_fifo_tx_to_rx/empty">
+      <obj_property name="ElementShortName">empty</obj_property>
+      <obj_property name="ObjectShortName">empty</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/cdc_fifo_tx_to_rx/wr_rst_busy">
+      <obj_property name="ElementShortName">wr_rst_busy</obj_property>
+      <obj_property name="ObjectShortName">wr_rst_busy</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/gth_unit_example_top_sim/example_top_inst/cdc_fifo_tx_to_rx/rd_rst_busy">
+      <obj_property name="ElementShortName">rd_rst_busy</obj_property>
+      <obj_property name="ObjectShortName">rd_rst_busy</obj_property>
+   </wvobject>
+</wave_config>
