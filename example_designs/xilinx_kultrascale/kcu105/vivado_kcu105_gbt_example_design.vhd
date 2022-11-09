@@ -98,7 +98,7 @@ entity kcu105_gbt_example_design is
       
       SMA_MGT_REFCLK_P                               : in  std_logic;
       SMA_MGT_REFCLK_N                               : in  std_logic; 
-      
+
       --==========--
       -- MGT(GTX) --
       --==========--                   
@@ -115,6 +115,22 @@ entity kcu105_gbt_example_design is
       ---------------
       
       SFP_TX_DISABLE                                 : out std_logic;    
+
+      -- 8b/10b ports
+      mgtrefclk1_x0y3_p : in std_logic;
+      mgtrefclk1_x0y3_n : in std_logic;
+      hb_gtwiz_reset_clk_freerun_in_p : in std_logic;
+      hb_gtwiz_reset_clk_freerun_in_n : in std_logic;
+      ch0_gthrxn_in  : in std_logic;
+      ch0_gthrxp_in  : in std_logic;
+      ch0_gthtxn_out : out std_logic;
+      ch0_gthtxp_out : out std_logic;
+      hb_gtwiz_reset_all_in : in std_logic;
+      link_down_latched_reset_in : in std_logic;
+      link_status_out : out std_logic;
+      link_down_latched_out : out std_logic;
+
+
       
       --====================--
       -- Signals forwarding --
@@ -347,11 +363,46 @@ architecture structural of kcu105_gbt_example_design is
          
    --================--
    signal sysclk:                    std_logic;  
+
+   -- 8b10b communication
+   COMPONENT gth_unit_example_top PORT(
+     mgtrefclk1_x0y3_p               : in std_logic;
+     mgtrefclk1_x0y3_n               : in std_logic;
+     ch0_gthrxn_in                   : in std_logic;
+     ch0_gthrxp_in                   : in std_logic;
+     ch0_gthtxn_out                  : out std_logic;
+     ch0_gthtxp_out                  : out std_logic;
+     hb_gtwiz_reset_clk_freerun_in_p : in std_logic;
+     hb_gtwiz_reset_clk_freerun_in_n : in std_logic;
+     hb_gtwiz_reset_all_in           : in std_logic;
+     link_down_latched_reset_in      : in std_logic;
+     link_status_out                 : out std_logic;
+     link_down_latched_out           : out std_logic
+   );
+   END COMPONENT;
+
           
    --=====================================================================================--  
 --=================================================================================================--
 begin                 --========####   Architecture Body   ####========-- 
 --=================================================================================================--
+
+   -- 8b/10b communication
+   gth_8b10b: gth_unit_example_top
+     port map (
+       mgtrefclk1_x0y3_p => mgtrefclk1_x0y3_p,
+       mgtrefclk1_x0y3_n => mgtrefclk1_x0y3_n,
+       ch0_gthrxn_in => ch0_gthrxn_in, 
+       ch0_gthrxp_in => ch0_gthrxp_in,
+       ch0_gthtxn_out => ch0_gthtxn_out,
+       ch0_gthtxp_out => ch0_gthtxp_out, 
+       hb_gtwiz_reset_clk_freerun_in_p => hb_gtwiz_reset_clk_freerun_in_p,
+       hb_gtwiz_reset_clk_freerun_in_n => hb_gtwiz_reset_clk_freerun_in_n,
+       hb_gtwiz_reset_all_in => hb_gtwiz_reset_all_in,
+       link_down_latched_reset_in => link_down_latched_reset_in,
+       link_status_out => link_status_out,
+       link_down_latched_out => link_down_latched_out 
+     );
    
    --==================================== User Logic =====================================--
    
