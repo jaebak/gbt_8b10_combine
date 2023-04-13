@@ -94,10 +94,10 @@ set_false_path -to [get_pins -filter {REF_PIN_NAME=~*PRE} -of_objects [get_cells
 set_false_path -to [get_cells -hierarchical -filter {NAME =~ *gtwiz_userclk_tx_inst/*gtwiz_userclk_tx_active_*_reg}] -quiet
 set_false_path -to [get_cells -hierarchical -filter {NAME =~ *gtwiz_userclk_rx_inst/*gtwiz_userclk_rx_active_*_reg}] -quiet
 
-set_property -dict { PACKAGE_PIN G10  IOSTANDARD LVDS} [get_ports hb_gtwiz_reset_clk_freerun_in_p]
-set_property -dict { PACKAGE_PIN F10  IOSTANDARD LVDS} [get_ports hb_gtwiz_reset_clk_freerun_in_n]
-create_clock -name CLK_125_group  -period 8    [get_ports hb_gtwiz_reset_clk_freerun_in_p]
-set_clock_groups -group [get_clocks CLK_125_group -include_generated_clocks] -asynchronous
+#set_property -dict { PACKAGE_PIN G10  IOSTANDARD LVDS} [get_ports hb_gtwiz_reset_clk_freerun_in_p]
+#set_property -dict { PACKAGE_PIN F10  IOSTANDARD LVDS} [get_ports hb_gtwiz_reset_clk_freerun_in_n]
+#create_clock -name CLK_125_group  -period 8    [get_ports hb_gtwiz_reset_clk_freerun_in_p]
+#set_clock_groups -group [get_clocks CLK_125_group -include_generated_clocks] -asynchronous
 
 set_property -dict {package_pin V2} [get_ports ch0_gthrxp_in]
 set_property -dict {package_pin V1} [get_ports ch0_gthrxn_in]

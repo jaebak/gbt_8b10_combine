@@ -68,8 +68,8 @@ module gth_unit_example_top (
   output wire ch0_gthtxp_out,
 
   // User-provided ports for reset helper block(s)
-  input  wire hb_gtwiz_reset_clk_freerun_in_p,
-  input  wire hb_gtwiz_reset_clk_freerun_in_n,
+  input  wire hb_gtwiz_reset_clk_freerun_buf_int,
+  //input  wire hb_gtwiz_reset_clk_freerun_in_n,
   input  wire hb_gtwiz_reset_all_in,
 
   // PRBS-based link status ports
@@ -348,18 +348,18 @@ module gth_unit_example_top (
 
   // Globally buffer the free-running input clock
   wire hb_gtwiz_reset_clk_freerun_in_buf;
-  wire hb_gtwiz_reset_clk_freerun_buf_int;
+  //wire hb_gtwiz_reset_clk_freerun_buf_int;
   
-  IBUFDS ibuf_clk_freerun_inst (
-    .I (hb_gtwiz_reset_clk_freerun_in_p),
-    .IB (hb_gtwiz_reset_clk_freerun_in_n),
-    .O (hb_gtwiz_reset_clk_freerun_in_buf)
-  );
+  //IBUFDS ibuf_clk_freerun_inst (
+  //  .I (hb_gtwiz_reset_clk_freerun_in_p),
+  //  .IB (hb_gtwiz_reset_clk_freerun_in_n),
+  //  .O (hb_gtwiz_reset_clk_freerun_in_buf)
+  //);
 
-  BUFG bufg_clk_freerun_inst (
-    .I (hb_gtwiz_reset_clk_freerun_in_buf),
-    .O (hb_gtwiz_reset_clk_freerun_buf_int)
-  );
+  //BUFG bufg_clk_freerun_inst (
+  //  .I (hb_gtwiz_reset_clk_freerun_in),
+  //  .O (hb_gtwiz_reset_clk_freerun_buf_int)
+  //);
 
   // Instantiate a differential reference clock buffer for each reference clock differential pair in this configuration,
   // and assign the single-ended output of each differential reference clock buffer to the appropriate PLL input signal

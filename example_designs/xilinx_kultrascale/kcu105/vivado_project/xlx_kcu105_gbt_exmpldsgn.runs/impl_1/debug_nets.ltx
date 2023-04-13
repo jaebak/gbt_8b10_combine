@@ -14,13 +14,1918 @@
                         "clk_input_freq_hz": "125000003"
                     },
                     {
+                        "type": "VIO_V2",
+                        "name": "gth_8b10b/gth_unit_vio_0_inst",
+                        "spec": "labtools_vio_v3",
+                        "ipName": "vio",
+                        "core_location": {
+                            "user_chain": 1,
+                            "slave_index": 0,
+                            "bscan_switch_index": 0
+                        },
+                        "uuid": "4495242277C855BF96A14F2FE77C8374",
+                        "pins": [
+                            {
+                                "name": "probe_in0",
+                                "id": 0,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "gth_8b10b/ila_tx_1",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "gth_8b10b/ila_tx_1[166]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in1",
+                                "id": 1,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 1,
+                                "nets": [
+                                    {
+                                        "name": "gth_8b10b/link_down_latched_out",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in2",
+                                "id": 2,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 2,
+                                "nets": [
+                                    {
+                                        "name": "gth_8b10b/init_done_int",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in3",
+                                "id": 3,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 3,
+                                "portIndex": 3,
+                                "nets": [
+                                    {
+                                        "name": "gth_8b10b/init_retry_ctr_int",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "gth_8b10b/init_retry_ctr_int[3]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/init_retry_ctr_int[2]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/init_retry_ctr_int[1]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/init_retry_ctr_int[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in4",
+                                "id": 4,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 4,
+                                "nets": [
+                                    {
+                                        "name": "gth_8b10b/gtpowergood_vio_sync",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in5",
+                                "id": 5,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 5,
+                                "nets": [
+                                    {
+                                        "name": "gth_8b10b/txprgdivresetdone_vio_sync",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in6",
+                                "id": 6,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 6,
+                                "nets": [
+                                    {
+                                        "name": "gth_8b10b/rxprgdivresetdone_vio_sync",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in7",
+                                "id": 7,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 7,
+                                "nets": [
+                                    {
+                                        "name": "gth_8b10b/txpmaresetdone_vio_sync",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in8",
+                                "id": 8,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 8,
+                                "nets": [
+                                    {
+                                        "name": "gth_8b10b/rxpmaresetdone_vio_sync",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in9",
+                                "id": 9,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 9,
+                                "nets": [
+                                    {
+                                        "name": "gth_8b10b/gtwiz_reset_tx_done_vio_sync",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in10",
+                                "id": 10,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 10,
+                                "nets": [
+                                    {
+                                        "name": "gth_8b10b/gtwiz_reset_rx_done_vio_sync",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_out0",
+                                "id": 11,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "gth_8b10b/hb_gtwiz_reset_all_vio_int",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_out1",
+                                "id": 12,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 1,
+                                "nets": [
+                                    {
+                                        "name": "gth_8b10b/hb0_gtwiz_reset_tx_pll_and_datapath_int",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_out2",
+                                "id": 13,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 2,
+                                "nets": [
+                                    {
+                                        "name": "gth_8b10b/hb0_gtwiz_reset_tx_datapath_int",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_out3",
+                                "id": 14,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 3,
+                                "nets": [
+                                    {
+                                        "name": "gth_8b10b/hb_gtwiz_reset_rx_pll_and_datapath_vio_int",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_out4",
+                                "id": 15,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 4,
+                                "nets": [
+                                    {
+                                        "name": "gth_8b10b/hb_gtwiz_reset_rx_datapath_vio_int",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_out5",
+                                "id": 16,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 5,
+                                "nets": [
+                                    {
+                                        "name": "gth_8b10b/link_down_latched_reset_vio_int",
+                                        "isBus": false
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "ILA_V3",
+                        "name": "gth_8b10b/ila_optics_rx",
+                        "spec": "labtools_ila_v6",
+                        "ipName": "ila",
+                        "core_location": {
+                            "user_chain": 1,
+                            "slave_index": 1,
+                            "bscan_switch_index": 0
+                        },
+                        "uuid": "C0CD70B3B72E581DAE432E3CF4D2E9A9",
+                        "pins": [
+                            {
+                                "name": "probe0",
+                                "id": 17,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 255,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "gth_8b10b/ila_rx",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "gth_8b10b/ila_rx[255]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[254]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[253]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[252]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[251]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[250]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[249]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[248]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[247]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[246]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[245]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[244]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[243]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[242]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[241]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[240]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[239]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[238]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[237]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[236]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[235]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[234]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[233]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[232]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[231]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[230]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[229]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[228]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[227]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[226]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[225]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[224]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[223]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[222]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[221]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[220]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[219]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[218]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[217]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[216]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[215]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[214]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[213]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[212]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[211]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[210]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[209]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[208]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[207]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[206]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[205]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[204]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[203]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[202]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[201]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[200]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[199]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[198]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[197]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[196]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[195]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[194]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[193]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[192]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[191]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[190]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[189]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[188]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[187]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[186]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[185]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[184]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[183]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[182]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[181]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[180]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[179]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[178]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[177]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[176]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[175]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[174]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[173]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[172]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[171]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[170]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[169]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[168]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[167]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[166]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[165]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[164]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[163]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[162]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[161]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[160]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[159]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[158]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[157]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[156]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[155]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[154]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[153]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[152]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[151]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[150]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[149]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[148]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[147]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[146]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[145]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[144]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[143]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[142]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[141]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[140]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[139]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[138]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[137]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[136]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[135]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[134]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[133]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[132]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[131]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[130]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[129]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[128]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[127]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[126]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[125]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[124]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[123]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[122]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[121]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[120]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[119]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[118]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[117]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[116]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[115]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[114]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[113]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[112]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[111]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[110]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[109]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[108]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[107]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[106]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[105]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[104]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[103]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[102]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[101]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[100]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[99]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[98]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[97]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[96]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[95]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[94]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[93]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[92]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[91]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[90]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[89]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[88]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[87]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[86]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[85]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[84]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[83]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[82]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[81]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[80]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[79]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[78]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[77]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[76]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[75]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[74]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[73]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[72]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[71]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[70]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[69]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[68]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[67]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[66]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[65]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[64]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[63]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[62]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[61]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[60]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[59]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[58]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[57]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[56]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[55]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[54]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[53]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[52]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[51]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[50]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[49]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[48]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[47]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[46]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[45]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[44]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[43]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[42]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[41]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[40]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[39]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[38]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[37]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[36]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[35]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[34]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[33]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[32]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[31]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[30]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[29]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[28]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[27]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[26]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[25]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[24]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[23]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[22]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[21]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[20]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[19]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[18]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[17]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[16]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[15]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[14]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[13]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[12]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[11]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[10]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[9]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[8]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[7]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[6]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[5]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[4]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[3]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[2]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[1]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_rx[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "ILA_V3",
+                        "name": "gth_8b10b/ila_optics_tx",
+                        "spec": "labtools_ila_v6",
+                        "ipName": "ila",
+                        "core_location": {
+                            "user_chain": 1,
+                            "slave_index": 2,
+                            "bscan_switch_index": 0
+                        },
+                        "uuid": "9ED056E0547E5D1681E750F0AB7FA9D5",
+                        "pins": [
+                            {
+                                "name": "probe0",
+                                "id": 18,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 255,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "gth_8b10b/ila_tx",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "gth_8b10b/ila_tx[255]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[254]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[253]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[252]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[251]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[250]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[249]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[248]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[247]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[246]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[245]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[244]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[243]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[242]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[241]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[240]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[239]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[238]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[237]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[236]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[235]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[234]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[233]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[232]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[231]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[230]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[229]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[228]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[227]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[226]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[225]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[224]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[223]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[222]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[221]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[220]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[219]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[218]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[217]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[216]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[215]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[214]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[213]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[212]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[211]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[210]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[209]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[208]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[207]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[206]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[205]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[204]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[203]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[202]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[201]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[200]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[199]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[198]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[197]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[196]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[195]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[194]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[193]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[192]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[191]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[190]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[189]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[188]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[187]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[186]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[185]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[184]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[183]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[182]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[181]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[180]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[179]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[178]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[177]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[176]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[175]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[174]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[173]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[172]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[171]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[170]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[169]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[168]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[167]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[166]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[165]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[164]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[163]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[162]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[161]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[160]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[159]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[158]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[157]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[156]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[155]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[154]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[153]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[152]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[151]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[150]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[149]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[148]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[147]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[146]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[145]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[144]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[143]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[142]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[141]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[140]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[139]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[138]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[137]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[136]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[135]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[134]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[133]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[132]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[131]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[130]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[129]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[128]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[127]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[126]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[125]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[124]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[123]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[122]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[121]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[120]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[119]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[118]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[117]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[116]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[115]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[114]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[113]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[112]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[111]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[110]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[109]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[108]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[107]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[106]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[105]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[104]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[103]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[102]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[101]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[100]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[99]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[98]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[97]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[96]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[95]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[94]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[93]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[92]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[91]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[90]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[89]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[88]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[87]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[86]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[85]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[84]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[83]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[82]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[81]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[80]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[79]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[78]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[77]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[76]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[75]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[74]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[73]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[72]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[71]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[70]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[69]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[68]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[67]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[66]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[65]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[64]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[63]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[62]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[61]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[60]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[59]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[58]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[57]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[56]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[55]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[54]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[53]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[52]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[51]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[50]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[49]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[48]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[47]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[46]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[45]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[44]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[43]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[42]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[41]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[40]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[39]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[38]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[37]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[36]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[35]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[34]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[33]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[32]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[31]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[30]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[29]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[28]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[27]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[26]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[25]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[24]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[23]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[22]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[21]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[20]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[19]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[18]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[17]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[16]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[15]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[14]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[13]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[12]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[11]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[10]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[9]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[8]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[7]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[6]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[5]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[4]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[3]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[2]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[1]"
+                                            },
+                                            {
+                                                "name": "gth_8b10b/ila_tx[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
                         "type": "XSDBS_V2",
                         "name": "jtag_master_inst",
                         "spec": "labtools_xsdbslavelib_v2",
                         "ipName": "jtag_axi",
                         "core_location": {
                             "user_chain": 1,
-                            "slave_index": 0,
+                            "slave_index": 3,
                             "bscan_switch_index": 0
                         },
                         "uuid": "BDF9082718BF55448F0095418C24EF50"
@@ -32,14 +1937,14 @@
                         "ipName": "ila",
                         "core_location": {
                             "user_chain": 1,
-                            "slave_index": 1,
+                            "slave_index": 4,
                             "bscan_switch_index": 0
                         },
                         "uuid": "A545488CCE765C238652FF8BCAA66568",
                         "pins": [
                             {
                                 "name": "probe0",
-                                "id": 0,
+                                "id": 19,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -309,7 +2214,7 @@
                             },
                             {
                                 "name": "probe1",
-                                "id": 1,
+                                "id": 20,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -675,7 +2580,7 @@
                             },
                             {
                                 "name": "probe2",
-                                "id": 2,
+                                "id": 21,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": false,
@@ -691,7 +2596,7 @@
                             },
                             {
                                 "name": "probe3",
-                                "id": 3,
+                                "id": 22,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": false,
@@ -714,14 +2619,14 @@
                         "ipName": "ila",
                         "core_location": {
                             "user_chain": 1,
-                            "slave_index": 2,
+                            "slave_index": 5,
                             "bscan_switch_index": 0
                         },
                         "uuid": "9AD0FF78642B5FC9905917AE5E504125",
                         "pins": [
                             {
                                 "name": "probe0",
-                                "id": 4,
+                                "id": 23,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -991,7 +2896,7 @@
                             },
                             {
                                 "name": "probe1",
-                                "id": 5,
+                                "id": 24,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -1357,7 +3262,7 @@
                             },
                             {
                                 "name": "probe2",
-                                "id": 6,
+                                "id": 25,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": false,
@@ -1373,7 +3278,7 @@
                             },
                             {
                                 "name": "probe3",
-                                "id": 7,
+                                "id": 26,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": false,
@@ -1396,14 +3301,14 @@
                         "ipName": "vio",
                         "core_location": {
                             "user_chain": 1,
-                            "slave_index": 3,
+                            "slave_index": 6,
                             "bscan_switch_index": 0
                         },
                         "uuid": "1BE27D511A4C50DC974F3E22D2C609B9",
                         "pins": [
                             {
                                 "name": "probe_in0",
-                                "id": 8,
+                                "id": 27,
                                 "type": "DATA",
                                 "direction": "IN",
                                 "isVector": false,
@@ -1419,7 +3324,7 @@
                             },
                             {
                                 "name": "probe_in1",
-                                "id": 9,
+                                "id": 28,
                                 "type": "DATA",
                                 "direction": "IN",
                                 "isVector": false,
@@ -1430,13 +3335,13 @@
                                     {
                                         "name": "txFrameClkPllLocked_from_gbtExmplDsgn",
                                         "isBus": false,
-                                        "parentNetId": 133
+                                        "parentNetId": 627
                                     }
                                 ]
                             },
                             {
                                 "name": "probe_in2",
-                                "id": 10,
+                                "id": 29,
                                 "type": "DATA",
                                 "direction": "IN",
                                 "isVector": false,
@@ -1452,7 +3357,7 @@
                             },
                             {
                                 "name": "probe_in3",
-                                "id": 11,
+                                "id": 30,
                                 "type": "DATA",
                                 "direction": "IN",
                                 "isVector": false,
@@ -1468,7 +3373,7 @@
                             },
                             {
                                 "name": "probe_in4",
-                                "id": 12,
+                                "id": 31,
                                 "type": "DATA",
                                 "direction": "IN",
                                 "isVector": false,
@@ -1484,7 +3389,7 @@
                             },
                             {
                                 "name": "probe_in5",
-                                "id": 13,
+                                "id": 32,
                                 "type": "DATA",
                                 "direction": "IN",
                                 "isVector": true,
@@ -1520,7 +3425,7 @@
                             },
                             {
                                 "name": "probe_in6",
-                                "id": 14,
+                                "id": 33,
                                 "type": "DATA",
                                 "direction": "IN",
                                 "isVector": false,
@@ -1536,7 +3441,7 @@
                             },
                             {
                                 "name": "probe_in7",
-                                "id": 15,
+                                "id": 34,
                                 "type": "DATA",
                                 "direction": "IN",
                                 "isVector": false,
@@ -1552,7 +3457,7 @@
                             },
                             {
                                 "name": "probe_in8",
-                                "id": 16,
+                                "id": 35,
                                 "type": "DATA",
                                 "direction": "IN",
                                 "isVector": false,
@@ -1568,7 +3473,7 @@
                             },
                             {
                                 "name": "probe_in9",
-                                "id": 17,
+                                "id": 36,
                                 "type": "DATA",
                                 "direction": "IN",
                                 "isVector": false,
@@ -1584,7 +3489,7 @@
                             },
                             {
                                 "name": "probe_in10",
-                                "id": 18,
+                                "id": 37,
                                 "type": "DATA",
                                 "direction": "IN",
                                 "isVector": false,
@@ -1600,7 +3505,7 @@
                             },
                             {
                                 "name": "probe_in11",
-                                "id": 19,
+                                "id": 38,
                                 "type": "DATA",
                                 "direction": "IN",
                                 "isVector": false,
@@ -1616,7 +3521,7 @@
                             },
                             {
                                 "name": "probe_in12",
-                                "id": 20,
+                                "id": 39,
                                 "type": "DATA",
                                 "direction": "IN",
                                 "isVector": false,
@@ -1632,7 +3537,7 @@
                             },
                             {
                                 "name": "probe_in13",
-                                "id": 21,
+                                "id": 40,
                                 "type": "DATA",
                                 "direction": "IN",
                                 "isVector": true,
@@ -1746,7 +3651,7 @@
                             },
                             {
                                 "name": "probe_in14",
-                                "id": 22,
+                                "id": 41,
                                 "type": "DATA",
                                 "direction": "IN",
                                 "isVector": true,
@@ -1860,7 +3765,7 @@
                             },
                             {
                                 "name": "probe_in15",
-                                "id": 23,
+                                "id": 42,
                                 "type": "DATA",
                                 "direction": "IN",
                                 "isVector": false,
@@ -1876,7 +3781,7 @@
                             },
                             {
                                 "name": "probe_in16",
-                                "id": 24,
+                                "id": 43,
                                 "type": "DATA",
                                 "direction": "IN",
                                 "isVector": false,
@@ -1892,7 +3797,7 @@
                             },
                             {
                                 "name": "probe_in17",
-                                "id": 25,
+                                "id": 44,
                                 "type": "DATA",
                                 "direction": "IN",
                                 "isVector": true,
@@ -1934,7 +3839,7 @@
                             },
                             {
                                 "name": "probe_out0",
-                                "id": 26,
+                                "id": 45,
                                 "type": "DATA",
                                 "direction": "OUT",
                                 "isVector": false,
@@ -1950,7 +3855,7 @@
                             },
                             {
                                 "name": "probe_out1",
-                                "id": 27,
+                                "id": 46,
                                 "type": "DATA",
                                 "direction": "OUT",
                                 "isVector": false,
@@ -1966,7 +3871,7 @@
                             },
                             {
                                 "name": "probe_out2",
-                                "id": 28,
+                                "id": 47,
                                 "type": "DATA",
                                 "direction": "OUT",
                                 "isVector": true,
@@ -1990,7 +3895,7 @@
                             },
                             {
                                 "name": "probe_out3",
-                                "id": 29,
+                                "id": 48,
                                 "type": "DATA",
                                 "direction": "OUT",
                                 "isVector": true,
@@ -2017,7 +3922,7 @@
                             },
                             {
                                 "name": "probe_out4",
-                                "id": 30,
+                                "id": 49,
                                 "type": "DATA",
                                 "direction": "OUT",
                                 "isVector": false,
@@ -2033,7 +3938,7 @@
                             },
                             {
                                 "name": "probe_out5",
-                                "id": 31,
+                                "id": 50,
                                 "type": "DATA",
                                 "direction": "OUT",
                                 "isVector": false,
@@ -2049,7 +3954,7 @@
                             },
                             {
                                 "name": "probe_out6",
-                                "id": 32,
+                                "id": 51,
                                 "type": "DATA",
                                 "direction": "OUT",
                                 "isVector": false,
@@ -2065,7 +3970,7 @@
                             },
                             {
                                 "name": "probe_out7",
-                                "id": 33,
+                                "id": 52,
                                 "type": "DATA",
                                 "direction": "OUT",
                                 "isVector": false,
@@ -2081,7 +3986,7 @@
                             },
                             {
                                 "name": "probe_out8",
-                                "id": 34,
+                                "id": 53,
                                 "type": "DATA",
                                 "direction": "OUT",
                                 "isVector": false,
@@ -2097,7 +4002,7 @@
                             },
                             {
                                 "name": "probe_out9",
-                                "id": 35,
+                                "id": 54,
                                 "type": "DATA",
                                 "direction": "OUT",
                                 "isVector": true,
@@ -2124,7 +4029,7 @@
                             },
                             {
                                 "name": "probe_out10",
-                                "id": 36,
+                                "id": 55,
                                 "type": "DATA",
                                 "direction": "OUT",
                                 "isVector": false,
@@ -2140,7 +4045,7 @@
                             },
                             {
                                 "name": "probe_out11",
-                                "id": 37,
+                                "id": 56,
                                 "type": "DATA",
                                 "direction": "OUT",
                                 "isVector": true,
@@ -2182,7 +4087,7 @@
                             },
                             {
                                 "name": "probe_out12",
-                                "id": 38,
+                                "id": 57,
                                 "type": "DATA",
                                 "direction": "OUT",
                                 "isVector": false,
@@ -2198,7 +4103,7 @@
                             },
                             {
                                 "name": "probe_out13",
-                                "id": 39,
+                                "id": 58,
                                 "type": "DATA",
                                 "direction": "OUT",
                                 "isVector": false,
@@ -2209,13 +4114,13 @@
                                     {
                                         "name": "txPllReset",
                                         "isBus": false,
-                                        "parentNetId": 249
+                                        "parentNetId": 743
                                     }
                                 ]
                             },
                             {
                                 "name": "probe_out14",
-                                "id": 40,
+                                "id": 59,
                                 "type": "DATA",
                                 "direction": "OUT",
                                 "isVector": false,
@@ -2231,7 +4136,7 @@
                             },
                             {
                                 "name": "probe_out15",
-                                "id": 41,
+                                "id": 60,
                                 "type": "DATA",
                                 "direction": "OUT",
                                 "isVector": false,
@@ -2250,7 +4155,7 @@
                 ],
                 "parent_nets": [
                     {
-                        "id": 133,
+                        "id": 627,
                         "name": "txFrameclkGen_inst/txPll/inst/locked",
                         "state_reg": [
                             {
@@ -2285,7 +4190,7 @@
                         ]
                     },
                     {
-                        "id": 249,
+                        "id": 743,
                         "name": "vio/inst/PROBE_OUT_ALL_INST/G_PROBE_OUT[13].PROBE_OUT0_INST/probe_out13[0]",
                         "state_reg": [
                             {

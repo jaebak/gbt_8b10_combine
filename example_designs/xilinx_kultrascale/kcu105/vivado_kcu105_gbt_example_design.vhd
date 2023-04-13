@@ -372,8 +372,8 @@ architecture structural of kcu105_gbt_example_design is
      ch0_gthrxp_in                   : in std_logic;
      ch0_gthtxn_out                  : out std_logic;
      ch0_gthtxp_out                  : out std_logic;
-     hb_gtwiz_reset_clk_freerun_in_p : in std_logic;
-     hb_gtwiz_reset_clk_freerun_in_n : in std_logic;
+     hb_gtwiz_reset_clk_freerun_buf_int : in std_logic;
+     --hb_gtwiz_reset_clk_freerun_in_n : in std_logic;
      hb_gtwiz_reset_all_in           : in std_logic;
      link_down_latched_reset_in      : in std_logic;
      link_status_out                 : out std_logic;
@@ -396,8 +396,8 @@ begin                 --========####   Architecture Body   ####========--
        ch0_gthrxp_in => ch0_gthrxp_in,
        ch0_gthtxn_out => ch0_gthtxn_out,
        ch0_gthtxp_out => ch0_gthtxp_out, 
-       hb_gtwiz_reset_clk_freerun_in_p => hb_gtwiz_reset_clk_freerun_in_p,
-       hb_gtwiz_reset_clk_freerun_in_n => hb_gtwiz_reset_clk_freerun_in_n,
+       hb_gtwiz_reset_clk_freerun_buf_int => fabricClk_from_userClockIbufgds,
+       --hb_gtwiz_reset_clk_freerun_in_n => USER_CLOCK_N,
        hb_gtwiz_reset_all_in => hb_gtwiz_reset_all_in,
        link_down_latched_reset_in => link_down_latched_reset_in,
        link_status_out => link_status_out,
@@ -433,7 +433,7 @@ begin                 --========####   Architecture Body   ####========--
    -- Fabric clock:
    ----------------
    
-   -- Comment: USER_CLOCK frequency: 156MHz 
+   -- Comment: USER_CLOCK frequency: 125MHz 
    
    userClockIbufgds: ibufgds
       generic map (

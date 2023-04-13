@@ -3,47 +3,29 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="D:/GBT-FPGA/gbt/example_designs/xilinx_kultrascale/kcu105/vivado_project/xlx_kcu105_gbt_exmpldsgn.hw/hw_1/wave/hw_ila_data_2/hw_ila_data_2.wdb" id="1">
+      <db_ref path="/higgs-data/jbkim/odmb/optics_session/github/scratch/g_0.01_gbt_8b10_combine/example_designs/xilinx_kultrascale/kcu105/vivado_project/xlx_kcu105_gbt_exmpldsgn.hw/hw_1/wave/hw_ila_data_2/hw_ila_data_2.wdb" id="1">
          <top_modules>
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="3571fs"></ZoomEndTime>
+      <ZoomEndTime time="16385fs"></ZoomEndTime>
       <Cursor1Time time="0fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="270"></NameColumnWidth>
-      <ValueColumnWidth column_width="276"></ValueColumnWidth>
+      <ValueColumnWidth column_width="272"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="4" />
-   <wvobject fp_name="txData_from_gbtExmplDsgn" type="array">
+   <WVObjectSize size="1" />
+   <wave_markers>
+   </wave_markers>
+   <wvobject type="array" fp_name="gth_8b10b/ila_tx">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">txData_from_gbtExmplDsgn[83:0]</obj_property>
-      <obj_property name="ObjectShortName">txData_from_gbtExmplDsgn[83:0]</obj_property>
+      <obj_property name="ElementShortName">gth_8b10b/ila_tx[255:0]</obj_property>
+      <obj_property name="ObjectShortName">ila_tx[255:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="txExtraDataWidebus_from_gbtExmplDsgn" type="array">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">txExtraDataWidebus_from_gbtExmplDsgn[31:0]</obj_property>
-      <obj_property name="ObjectShortName">txExtraDataWidebus_from_gbtExmplDsgn[31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="txIsDataSel_from_user_1" type="logic">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">txIsDataSel_from_user_1</obj_property>
-      <obj_property name="ObjectShortName">txIsDataSel_from_user_1</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-   </wvobject>
-   <wvobject fp_name="PROBE3" type="logic">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">PROBE3</obj_property>
-      <obj_property name="ObjectShortName">PROBE3</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
 </wave_config>

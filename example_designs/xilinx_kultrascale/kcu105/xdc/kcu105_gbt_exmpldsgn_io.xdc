@@ -67,11 +67,11 @@ set_property IOSTANDARD LVCMOS18 [get_ports SFP_TX_DISABLE]
 
 # IO_L1P_T0_12
 set_property PACKAGE_PIN H27 [get_ports USER_SMA_GPIO_P]
-set_property IOSTANDARD LVCMOS25 [get_ports USER_SMA_GPIO_P]
+set_property IOSTANDARD LVCMOS18 [get_ports USER_SMA_GPIO_P]
 set_property SLEW FAST [get_ports USER_SMA_GPIO_P]
 
 set_property PACKAGE_PIN G27 [get_ports USER_SMA_GPIO_N]
-set_property IOSTANDARD LVCMOS25 [get_ports USER_SMA_GPIO_N]
+set_property IOSTANDARD LVCMOS18 [get_ports USER_SMA_GPIO_N]
 set_property SLEW FAST [get_ports USER_SMA_GPIO_N]
 
 ##===================================================================================================##
