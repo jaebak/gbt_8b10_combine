@@ -4,7 +4,7 @@
 <!-- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.        -->
 
 <hwsession version="1" minor="2">
-  <device name="xcku040_0" gui_info="dashboard1=hw_ila_1[xcku040_0/hw_ila_1/Capture Setup=ILA_CAPTURE_1;xcku040_0/hw_ila_1/Waveform=ILA_WAVE_1;xcku040_0/hw_ila_1/Status=ILA_STATUS_1;xcku040_0/hw_ila_1/Settings=ILA_SETTINGS_1;xcku040_0/hw_ila_1/Trigger Setup=ILA_TRIGGER_1;],dashboard2=hw_ila_2[xcku040_0/hw_ila_2/Trigger Setup=ILA_TRIGGER_1;xcku040_0/hw_ila_2/Status=ILA_STATUS_1;xcku040_0/hw_ila_2/Settings=ILA_SETTINGS_1;xcku040_0/hw_ila_2/Capture Setup=ILA_CAPTURE_1;xcku040_0/hw_ila_2/Waveform=ILA_WAVE_1;],dashboard3=hw_vios[xcku040_0/hw_vio_1=VIO_PROBES_1;]"/>
+  <device name="xcku040_0" gui_info="dashboard1=hw_ila_1[xcku040_0/hw_ila_1/Capture Setup=ILA_CAPTURE_1;xcku040_0/hw_ila_1/Waveform=ILA_WAVE_1;xcku040_0/hw_ila_1/Status=ILA_STATUS_1;xcku040_0/hw_ila_1/Settings=ILA_SETTINGS_1;xcku040_0/hw_ila_1/Trigger Setup=ILA_TRIGGER_1;],dashboard2=hw_ila_2[xcku040_0/hw_ila_2/Trigger Setup=ILA_TRIGGER_1;xcku040_0/hw_ila_2/Status=ILA_STATUS_1;xcku040_0/hw_ila_2/Settings=ILA_SETTINGS_1;xcku040_0/hw_ila_2/Capture Setup=ILA_CAPTURE_1;xcku040_0/hw_ila_2/Waveform=ILA_WAVE_1;],dashboard3=hw_ila_3[xcku040_0/hw_ila_3/Status=ILA_STATUS_1;xcku040_0/hw_ila_3/Trigger Setup=ILA_TRIGGER_1;xcku040_0/hw_ila_3/Waveform=ILA_WAVE_1;xcku040_0/hw_ila_3/Settings=ILA_SETTINGS_1;xcku040_0/hw_ila_3/Capture Setup=ILA_CAPTURE_1;],dashboard4=hw_vios[xcku040_0/hw_vio_1=VIO_PROBES_1;],dashboard5=dashboard_1[xcku040_0/hw_vio_2=VIO_PROBES_1;],dashboard6=hw_ila_4[xcku040_0/hw_ila_4/Capture Setup=ILA_CAPTURE_1;xcku040_0/hw_ila_4/Waveform=ILA_WAVE_1;xcku040_0/hw_ila_4/Trigger Setup=ILA_TRIGGER_1;xcku040_0/hw_ila_4/Settings=ILA_SETTINGS_1;xcku040_0/hw_ila_4/Status=ILA_STATUS_1;],dashboard7=hw_ila_5[xcku040_0/hw_ila_5/Trigger Setup=ILA_TRIGGER_1;xcku040_0/hw_ila_5/Capture Setup=ILA_CAPTURE_1;xcku040_0/hw_ila_5/Status=ILA_STATUS_1;xcku040_0/hw_ila_5/Waveform=ILA_WAVE_1;xcku040_0/hw_ila_5/Settings=ILA_SETTINGS_1;]"/>
   <ObjectList object_type="hw_device" gui_info="">
     <Object name="xcku040_0" gui_info="">
       <Properties Property="FULL_PROBES.FILE" value="$_project_name_.runs/impl_1/debug_nets.ltx"/>
@@ -40,40 +40,47 @@
     </Object>
   </ObjectList>
   <ObjectList object_type="hw_probe" gui_info="">
-    <Object name="DEBUG_CLK_ALIGNMENT_debug[2:0]" gui_info="hw_vios/hw_vio_1=2"/>
-    <Object name="clkMuxSel_from_user" gui_info="hw_vios/hw_vio_1=3"/>
-    <Object name="countBitsModified[31:0]" gui_info="hw_vios/hw_vio_1=22"/>
-    <Object name="countWordReceived[31:0]" gui_info="hw_vios/hw_vio_1=23"/>
-    <Object name="gbtRxReadyLostFlag_from_gbtExmplDsgn" gui_info="hw_vios/hw_vio_1=18"/>
-    <Object name="gbtRxReady_from_gbtExmplDsgn" gui_info="hw_vios/hw_vio_1=13"/>
-    <Object name="latOptGbtBankRx_from_gbtExmplDsgn" gui_info="hw_vios/hw_vio_1=1"/>
-    <Object name="latOptGbtBankTx_from_gbtExmplDsgn" gui_info="hw_vios/hw_vio_1=0"/>
-    <Object name="loopBack_from_user[2:0]" gui_info="hw_vios/hw_vio_1=4"/>
-    <Object name="manualResetRx_from_user" gui_info="hw_vios/hw_vio_1=8"/>
-    <Object name="manualResetTx_from_user" gui_info="hw_vios/hw_vio_1=7"/>
-    <Object name="mgtReady_from_gbtExmplDsgn" gui_info="hw_vios/hw_vio_1=14"/>
+    <Object name="DEBUG_CLK_ALIGNMENT_debug[2:0]" gui_info="dashboard_1/hw_vio_2=4"/>
+    <Object name="clkMuxSel_from_user" gui_info="dashboard_1/hw_vio_2=18"/>
+    <Object name="countBitsModified[31:0]" gui_info="dashboard_1/hw_vio_2=3"/>
+    <Object name="countWordReceived[31:0]" gui_info="dashboard_1/hw_vio_2=19"/>
+    <Object name="gbtRxReadyLostFlag_from_gbtExmplDsgn" gui_info="dashboard_1/hw_vio_2=2"/>
+    <Object name="gbtRxReady_from_gbtExmplDsgn" gui_info="dashboard_1/hw_vio_2=20"/>
+    <Object name="latOptGbtBankRx_from_gbtExmplDsgn" gui_info="dashboard_1/hw_vio_2=8"/>
+    <Object name="latOptGbtBankTx_from_gbtExmplDsgn" gui_info="dashboard_1/hw_vio_2=21"/>
+    <Object name="loopBack_from_user[2:0]" gui_info="dashboard_1/hw_vio_2=9"/>
+    <Object name="manualResetRx_from_user" gui_info="dashboard_1/hw_vio_2=17"/>
+    <Object name="manualResetTx_from_user" gui_info="dashboard_1/hw_vio_2=10"/>
+    <Object name="mgtReady_from_gbtExmplDsgn" gui_info="dashboard_1/hw_vio_2=11"/>
     <Object name="probe_in11" gui_info=""/>
-    <Object name="resetDataErrorSeenFlag_from_user" gui_info="hw_vios/hw_vio_1=15"/>
-    <Object name="resetGbtRxReadyLostFlag_from_user" gui_info="hw_vios/hw_vio_1=17"/>
+    <Object name="probe_in5[5:0]" gui_info=""/>
+    <Object name="resetDataErrorSeenFlag_from_user" gui_info="dashboard_1/hw_vio_2=22"/>
+    <Object name="resetGbtRxReadyLostFlag_from_user" gui_info="dashboard_1/hw_vio_2=23"/>
     <Object name="resetTxClkGen_from_vio" gui_info="hw_vios/hw_vio_1=24"/>
-    <Object name="resetgbtfpga_from_vio" gui_info="hw_vios/hw_vio_1=6"/>
+    <Object name="resetgbtfpga_from_vio" gui_info="dashboard_1/hw_vio_2=12"/>
     <Object name="rxBitSlipNbr_from_gbtExmplDsgn[5:0]" gui_info=""/>
-    <Object name="rxBitSlipRstCount_from_gbtExmplDsgn[7:0]" gui_info="hw_vios/hw_vio_1=9"/>
-    <Object name="rxBitSlipRstOnEvent_from_user" gui_info="hw_vios/hw_vio_1=10"/>
-    <Object name="rxDataErrorSeen_from_gbtExmplDsgn" gui_info="hw_vios/hw_vio_1=16"/>
-    <Object name="rxExtrDataWidebusErSeen_from_gbtExmplDsgn" gui_info="hw_vios/hw_vio_1=19"/>
-    <Object name="rxFrameClkReady_from_gbtExmplDsgn" gui_info="hw_vios/hw_vio_1=11"/>
+    <Object name="rxBitSlipRstCount_from_gbtExmplDsgn[7:0]" gui_info="dashboard_1/hw_vio_2=1"/>
+    <Object name="rxBitSlipRstOnEvent_from_user" gui_info="dashboard_1/hw_vio_2=26"/>
+    <Object name="rxDataErrorSeen_from_gbtExmplDsgn" gui_info="dashboard_1/hw_vio_2=27"/>
+    <Object name="rxEncoding_from_vio" gui_info="dashboard_1/hw_vio_2=13"/>
+    <Object name="rxExtrDataWidebusErSeen_from_gbtExmplDsgn" gui_info="dashboard_1/hw_vio_2=5"/>
+    <Object name="rxFrameClkReady_from_gbtExmplDsgn" gui_info="dashboard_1/hw_vio_2=30"/>
+    <Object name="rxIsData_from_gbtExmplDsgn" gui_info="dashboard_1/hw_vio_2=7"/>
     <Object name="rxIsData_from_gbtExmplDsgn_1" gui_info="hw_vios/hw_vio_1=21"/>
     <Object name="rxWordClkReady_from_gbtExmplDsgn" gui_info=""/>
-    <Object name="shiftTxClock_from_vio" gui_info="hw_vios/hw_vio_1=27"/>
-    <Object name="testPatterSel_from_user[1:0]" gui_info="hw_vios/hw_vio_1=5"/>
-    <Object name="txAlignComputed_from_gbtbank" gui_info="hw_vios/hw_vio_1=24"/>
+    <Object name="shiftTxClock_from_vio" gui_info="dashboard_1/hw_vio_2=24"/>
+    <Object name="static_pattern_data_s[79:0]" gui_info="hw_vios/hw_vio_1=0"/>
+    <Object name="static_pattern_extradata_widebus_s[31:0]" gui_info="hw_vios/hw_vio_1=1"/>
+    <Object name="static_pattern_scec_s[1:0]" gui_info="hw_vios/hw_vio_1=2"/>
+    <Object name="testPatterSel_from_user[1:0]" gui_info="dashboard_1/hw_vio_2=15"/>
+    <Object name="txAlignComputed_from_gbtbank" gui_info="dashboard_1/hw_vio_2=28"/>
     <Object name="txAligned_from_gbtbank" gui_info="hw_vios/hw_vio_1=27"/>
-    <Object name="txAligned_from_gbtbank_latched" gui_info="hw_vios/hw_vio_1=25_exp"/>
-    <Object name="txFrameClkPllLocked_from_gbtExmplDsgn" gui_info="hw_vios/hw_vio_1=12"/>
-    <Object name="txIsDataSel_from_user" gui_info="hw_vios/hw_vio_1=20"/>
-    <Object name="txPllReset" gui_info="hw_vios/hw_vio_1=28"/>
-    <Object name="txShiftCount_from_vio[7:0]" gui_info="hw_vios/hw_vio_1=26"/>
+    <Object name="txAligned_from_gbtbank_latched" gui_info="dashboard_1/hw_vio_2=6"/>
+    <Object name="txEncoding_from_vio" gui_info="dashboard_1/hw_vio_2=25"/>
+    <Object name="txFrameClkPllLocked_from_gbtExmplDsgn" gui_info="dashboard_1/hw_vio_2=29"/>
+    <Object name="txIsDataSel_from_user" gui_info="dashboard_1/hw_vio_2=14"/>
+    <Object name="txPllReset" gui_info="dashboard_1/hw_vio_2=16"/>
+    <Object name="txShiftCount_from_vio[7:0]" gui_info="dashboard_1/hw_vio_2=0"/>
   </ObjectList>
   <ObjectList object_type="hw_vio" gui_info="">
     <Object name="hw_vio_1" gui_info="hw_vios/hw_vio_1/TablePreference=5	602	Name	0	2147483647	15	269	269	Value	1	2147483647	15	167	167	Activity	2	2147483647	15	55	55	Direction	3	2147483647	15	61	61	VIO	4	2147483647	15	50	50			1	6	1	Name	Value	Activity	Direction	VIO"/>
@@ -3095,10 +3102,166 @@
       <probeOptions Id="DebugProbeParams">
         <Option Id="DISPLAY_HINT" value=""/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_VIO" value="hw_vio_1"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="OUTPUT_VALUE" value="F00BABEAC1DACDCFFFFF"/>
+        <Option Id="OUTPUT_VALUE_RADIX" value="HEX"/>
+        <Option Id="SOURCE" value="netlist"/>
+      </probeOptions>
+      <nets>
+        <net name="static_pattern_data_s[79]"/>
+        <net name="static_pattern_data_s[78]"/>
+        <net name="static_pattern_data_s[77]"/>
+        <net name="static_pattern_data_s[76]"/>
+        <net name="static_pattern_data_s[75]"/>
+        <net name="static_pattern_data_s[74]"/>
+        <net name="static_pattern_data_s[73]"/>
+        <net name="static_pattern_data_s[72]"/>
+        <net name="static_pattern_data_s[71]"/>
+        <net name="static_pattern_data_s[70]"/>
+        <net name="static_pattern_data_s[69]"/>
+        <net name="static_pattern_data_s[68]"/>
+        <net name="static_pattern_data_s[67]"/>
+        <net name="static_pattern_data_s[66]"/>
+        <net name="static_pattern_data_s[65]"/>
+        <net name="static_pattern_data_s[64]"/>
+        <net name="static_pattern_data_s[63]"/>
+        <net name="static_pattern_data_s[62]"/>
+        <net name="static_pattern_data_s[61]"/>
+        <net name="static_pattern_data_s[60]"/>
+        <net name="static_pattern_data_s[59]"/>
+        <net name="static_pattern_data_s[58]"/>
+        <net name="static_pattern_data_s[57]"/>
+        <net name="static_pattern_data_s[56]"/>
+        <net name="static_pattern_data_s[55]"/>
+        <net name="static_pattern_data_s[54]"/>
+        <net name="static_pattern_data_s[53]"/>
+        <net name="static_pattern_data_s[52]"/>
+        <net name="static_pattern_data_s[51]"/>
+        <net name="static_pattern_data_s[50]"/>
+        <net name="static_pattern_data_s[49]"/>
+        <net name="static_pattern_data_s[48]"/>
+        <net name="static_pattern_data_s[47]"/>
+        <net name="static_pattern_data_s[46]"/>
+        <net name="static_pattern_data_s[45]"/>
+        <net name="static_pattern_data_s[44]"/>
+        <net name="static_pattern_data_s[43]"/>
+        <net name="static_pattern_data_s[42]"/>
+        <net name="static_pattern_data_s[41]"/>
+        <net name="static_pattern_data_s[40]"/>
+        <net name="static_pattern_data_s[39]"/>
+        <net name="static_pattern_data_s[38]"/>
+        <net name="static_pattern_data_s[37]"/>
+        <net name="static_pattern_data_s[36]"/>
+        <net name="static_pattern_data_s[35]"/>
+        <net name="static_pattern_data_s[34]"/>
+        <net name="static_pattern_data_s[33]"/>
+        <net name="static_pattern_data_s[32]"/>
+        <net name="static_pattern_data_s[31]"/>
+        <net name="static_pattern_data_s[30]"/>
+        <net name="static_pattern_data_s[29]"/>
+        <net name="static_pattern_data_s[28]"/>
+        <net name="static_pattern_data_s[27]"/>
+        <net name="static_pattern_data_s[26]"/>
+        <net name="static_pattern_data_s[25]"/>
+        <net name="static_pattern_data_s[24]"/>
+        <net name="static_pattern_data_s[23]"/>
+        <net name="static_pattern_data_s[22]"/>
+        <net name="static_pattern_data_s[21]"/>
+        <net name="static_pattern_data_s[20]"/>
+        <net name="static_pattern_data_s[19]"/>
+        <net name="static_pattern_data_s[18]"/>
+        <net name="static_pattern_data_s[17]"/>
+        <net name="static_pattern_data_s[16]"/>
+        <net name="static_pattern_data_s[15]"/>
+        <net name="static_pattern_data_s[14]"/>
+        <net name="static_pattern_data_s[13]"/>
+        <net name="static_pattern_data_s[12]"/>
+        <net name="static_pattern_data_s[11]"/>
+        <net name="static_pattern_data_s[10]"/>
+        <net name="static_pattern_data_s[9]"/>
+        <net name="static_pattern_data_s[8]"/>
+        <net name="static_pattern_data_s[7]"/>
+        <net name="static_pattern_data_s[6]"/>
+        <net name="static_pattern_data_s[5]"/>
+        <net name="static_pattern_data_s[4]"/>
+        <net name="static_pattern_data_s[3]"/>
+        <net name="static_pattern_data_s[2]"/>
+        <net name="static_pattern_data_s[1]"/>
+        <net name="static_pattern_data_s[0]"/>
+      </nets>
+    </probe>
+    <probe type="vio_output" busType="bus" source="netlist" spec="VIO_OUTPUT_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_VIO" value="hw_vio_1"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="OUTPUT_VALUE" value="beefcafe"/>
+        <Option Id="OUTPUT_VALUE_RADIX" value="HEX"/>
+        <Option Id="SOURCE" value="netlist"/>
+      </probeOptions>
+      <nets>
+        <net name="static_pattern_extradata_widebus_s[31]"/>
+        <net name="static_pattern_extradata_widebus_s[30]"/>
+        <net name="static_pattern_extradata_widebus_s[29]"/>
+        <net name="static_pattern_extradata_widebus_s[28]"/>
+        <net name="static_pattern_extradata_widebus_s[27]"/>
+        <net name="static_pattern_extradata_widebus_s[26]"/>
+        <net name="static_pattern_extradata_widebus_s[25]"/>
+        <net name="static_pattern_extradata_widebus_s[24]"/>
+        <net name="static_pattern_extradata_widebus_s[23]"/>
+        <net name="static_pattern_extradata_widebus_s[22]"/>
+        <net name="static_pattern_extradata_widebus_s[21]"/>
+        <net name="static_pattern_extradata_widebus_s[20]"/>
+        <net name="static_pattern_extradata_widebus_s[19]"/>
+        <net name="static_pattern_extradata_widebus_s[18]"/>
+        <net name="static_pattern_extradata_widebus_s[17]"/>
+        <net name="static_pattern_extradata_widebus_s[16]"/>
+        <net name="static_pattern_extradata_widebus_s[15]"/>
+        <net name="static_pattern_extradata_widebus_s[14]"/>
+        <net name="static_pattern_extradata_widebus_s[13]"/>
+        <net name="static_pattern_extradata_widebus_s[12]"/>
+        <net name="static_pattern_extradata_widebus_s[11]"/>
+        <net name="static_pattern_extradata_widebus_s[10]"/>
+        <net name="static_pattern_extradata_widebus_s[9]"/>
+        <net name="static_pattern_extradata_widebus_s[8]"/>
+        <net name="static_pattern_extradata_widebus_s[7]"/>
+        <net name="static_pattern_extradata_widebus_s[6]"/>
+        <net name="static_pattern_extradata_widebus_s[5]"/>
+        <net name="static_pattern_extradata_widebus_s[4]"/>
+        <net name="static_pattern_extradata_widebus_s[3]"/>
+        <net name="static_pattern_extradata_widebus_s[2]"/>
+        <net name="static_pattern_extradata_widebus_s[1]"/>
+        <net name="static_pattern_extradata_widebus_s[0]"/>
+      </nets>
+    </probe>
+    <probe type="vio_output" busType="bus" source="netlist" spec="VIO_OUTPUT_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_VIO" value="hw_vio_1"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="OUTPUT_VALUE" value="0"/>
+        <Option Id="OUTPUT_VALUE_RADIX" value="HEX"/>
+        <Option Id="SOURCE" value="netlist"/>
+      </probeOptions>
+      <nets>
+        <net name="static_pattern_scec_s[1]"/>
+        <net name="static_pattern_scec_s[0]"/>
+      </nets>
+    </probe>
+    <probe type="vio_output" busType="bus" source="netlist" spec="VIO_OUTPUT_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
         <Option Id="HW_VIO" value="hw_vio_2"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
-        <Option Id="OUTPUT_VALUE" value="1"/>
+        <Option Id="OUTPUT_VALUE" value="2"/>
         <Option Id="OUTPUT_VALUE_RADIX" value="HEX"/>
         <Option Id="SOURCE" value="netlist"/>
       </probeOptions>

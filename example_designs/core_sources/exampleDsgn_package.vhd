@@ -29,8 +29,8 @@ package gbt_exampledesign_package is
    constant NUM_LINK_Conf                       : integer := 1;
    constant TX_OPTIMIZATION_Conf                : integer := STANDARD;
    constant RX_OPTIMIZATION_Conf                : integer := STANDARD;
-   constant TX_ENCODING_Conf                    : integer := GBT_FRAME;
-   constant RX_ENCODING_Conf                    : integer := GBT_FRAME;
+   constant TX_ENCODING_Conf                    : integer := GBT_DYNAMIC;
+   constant RX_ENCODING_Conf                    : integer := GBT_DYNAMIC;
    constant DATA_GENERATOR_ENABLE_Conf          : integer := ENABLED;
    constant DATA_CHECKER_ENABLE_Conf            : integer := ENABLED;
    constant MATCH_FLAG_ENABLE_Conf              : integer := ENABLED;

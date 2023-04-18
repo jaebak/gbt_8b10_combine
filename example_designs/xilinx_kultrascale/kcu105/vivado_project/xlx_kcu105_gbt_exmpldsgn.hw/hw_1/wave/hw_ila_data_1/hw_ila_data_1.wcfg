@@ -10,7 +10,7 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="1025fs"></ZoomEndTime>
+      <ZoomEndTime time="6fs"></ZoomEndTime>
       <Cursor1Time time="0fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
@@ -18,8 +18,6 @@
       <ValueColumnWidth column_width="339"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="13" />
-   <wave_markers>
-   </wave_markers>
    <wvobject type="logic" fp_name="gbt_rxreset_s">
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">gbt_rxreset_s</obj_property>
