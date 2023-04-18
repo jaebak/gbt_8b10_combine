@@ -52,6 +52,7 @@ end xlx_ku_tx_phaligner;
 
 architecture Behavioral of xlx_ku_tx_phaligner is
     -- COMPONENTS
+    -- JB: clocking wizard IP
     COMPONENT xlx_ku_tx_pll PORT(
       clk_in1: in std_logic;
       RESET: in std_logic;
@@ -77,6 +78,14 @@ begin
     --==================================--
     -- Tx PLL                           -- 
     --==================================--
+    -- JB: clocking wizard IP
+    -- JB: Change phase relationship of output clock. 
+    -- JB: Each phase shift is 1/32 of VCO period.
+    -- JB: Takes 12 PSCLK cycles to change phase.
+    -- JB: psclk: Dynamic phase shift clock
+    -- JB: psen: Dynamic phase shift enable
+    -- JB: psincdec: 1: increments phase shift. 0: decrements phase shift
+    -- JB: psdone: Dynamic phase shift completed. High for one psclk.
     txPll: xlx_ku_tx_pll
       port map (
          clk_in1                                  => CLK_IN,

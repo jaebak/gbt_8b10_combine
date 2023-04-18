@@ -171,7 +171,14 @@ entity xlx_ku_gbt_example_design is
 		--==============--
 		GBTBANK_LOOPBACK_I										 : in  std_logic_vector(2 downto 0);
 		GBTBANK_TX_POL												 : in  std_logic_vector(1 to NUM_LINKS);
-		GBTBANK_RX_POL												 : in  std_logic_vector(1 to NUM_LINKS)
+		GBTBANK_RX_POL												 : in  std_logic_vector(1 to NUM_LINKS);
+
+		--==============--
+		-- TX VIO       --
+		--==============--
+        STATIC_PATTERN_SCEC_I                  : in std_logic_vector( 1 downto 0);
+        STATIC_PATTERN_DATA_I                  : in std_logic_vector(79 downto 0);
+        STATIC_PATTERN_EXTRADATA_WIDEBUS_I     : in std_logic_vector(31 downto 0)
 		        
    );
 end xlx_ku_gbt_example_design;
@@ -225,6 +232,23 @@ architecture structural of xlx_ku_gbt_example_design is
    signal gbtBank_rxEncodingSel            : std_logic_vector(1 downto 0);
    signal txData_from_gbtBank_pattGen      : gbt_reg84_A(1 to NUM_LINKS);
    signal txwBData_from_gbtBank_pattGen    : gbt_reg32_A(1 to NUM_LINKS);
+
+   COMPONENT ila_256 PORT(
+     CLK: in std_logic;
+     PROBE0: in std_logic_vector(255 downto 0)
+   );
+   END COMPONENT;
+
+   signal dpr_clk_probe : std_logic_vector(255 downto 0);
+   signal gbtbank_rxbitslip_rst_cnt_s : gbt_reg8_A(1 to NUM_LINKS);
+   signal ref_clk_probe : std_logic_vector(255 downto 0);
+   signal rx_clk_probe : std_logic_vector(255 downto 0);
+   signal gbtbank_rx_isdata_sel_s : std_logic_vector(1 to NUM_LINKS);
+   signal gbtbank_rx_errordetected_s : std_logic_vector(1 to NUM_LINKS);
+   signal gbtbank_rx_bitmodified_flag_s : gbt_reg84_A(1 to NUM_LINKS);
+   signal gbtbank_gbtrxready_lost_flag_s : std_logic_vector(1 to NUM_LINKS);
+   signal tx_clk_probe : std_logic_vector(255 downto 0);
+   signal gbt_txframeclk_s_jb : std_logic_vector(1 to NUM_LINKS);
 	
    --=====================================================================================--      
 
@@ -239,6 +263,7 @@ begin                 --========####   Architecture Body   ####========--
 	--============--	          
     gbtBank_Clk_gen: for i in 1 to NUM_LINKS generate
     
+        -- JB: For standard, sets RX_FRAMECLK_O to FRAMECLK_40MHz or 120.237 MHz recovered clock (mgt_rxwordclk_s)
         gbtBank_rxFrmClkPhAlgnr: entity work.gbt_rx_frameclk_phalgnr
             generic map(
                 TX_OPTIMIZATION                           => TX_OPTIMIZATION,
@@ -340,9 +365,12 @@ begin                 --========####   Architecture Body   ####========--
                -----------------------------------------------     
                TX_ENCODING_SEL_I                              => gbtBank_txEncodingSel,
                TEST_PATTERN_SEL_I                             => GBTBANK_TEST_PATTERN_SEL_I,
-               STATIC_PATTERN_SCEC_I                          => "00",
-               STATIC_PATTERN_DATA_I                          => x"000BABEAC1DACDCFFFFF",
-               STATIC_PATTERN_EXTRADATA_WIDEBUS_I             => x"BEEFCAFE",
+               --STATIC_PATTERN_SCEC_I                          => "00",
+               --STATIC_PATTERN_DATA_I                          => x"000BABEAC1DACDCFFFFF",
+               --STATIC_PATTERN_EXTRADATA_WIDEBUS_I             => x"BEEFCAFE",
+               STATIC_PATTERN_SCEC_I                          => STATIC_PATTERN_SCEC_I,
+               STATIC_PATTERN_DATA_I                          => STATIC_PATTERN_DATA_I,
+               STATIC_PATTERN_EXTRADATA_WIDEBUS_I             => STATIC_PATTERN_EXTRADATA_WIDEBUS_I,
                -----------------------------------------------
                TX_DATA_O                                      => txData_from_gbtBank_pattGen(i),
                TX_EXTRA_DATA_WIDEBUS_O                        => txwBData_from_gbtBank_pattGen(i)
@@ -392,17 +420,22 @@ begin                 --========####   Architecture Body   ####========--
                    GBT_RX_READY_I                                 => gbt_rxready_s(i),
                    RX_ENCODING_SEL_I                              => gbtBank_rxEncodingSel,
                    TEST_PATTERN_SEL_I                             => GBTBANK_TEST_PATTERN_SEL_I,   
-                   STATIC_PATTERN_SCEC_I                          => "00",
-                   STATIC_PATTERN_DATA_I                          => x"000BABEAC1DACDCFFFFF",        
-                   STATIC_PATTERN_EXTRADATA_WIDEBUS_I             => x"BEEFCAFE",  
+                   --STATIC_PATTERN_SCEC_I                          => "00",
+                   --STATIC_PATTERN_DATA_I                          => x"000BABEAC1DACDCFFFFF",        
+                   --STATIC_PATTERN_EXTRADATA_WIDEBUS_I             => x"BEEFCAFE",  
+                   STATIC_PATTERN_SCEC_I                          => STATIC_PATTERN_SCEC_I,
+                   STATIC_PATTERN_DATA_I                          => STATIC_PATTERN_DATA_I,        
+                   STATIC_PATTERN_EXTRADATA_WIDEBUS_I             => STATIC_PATTERN_EXTRADATA_WIDEBUS_I,  
                    RESET_GBTRXREADY_LOST_FLAG_I                   => GBTBANK_RESET_GBTRXREADY_LOST_FLAG_I(i),               
                    RESET_DATA_ERRORSEEN_FLAG_I                    => GBTBANK_RESET_DATA_ERRORSEEN_FLAG_I(i),  
                    -----------------------------------------------           
-                   GBTRXREADY_LOST_FLAG_O                         => GBTBANK_GBTRXREADY_LOST_FLAG_O(i), 
+                   --GBTRXREADY_LOST_FLAG_O                         => GBTBANK_GBTRXREADY_LOST_FLAG_O(i), 
+                   GBTRXREADY_LOST_FLAG_O                         => gbtbank_gbtrxready_lost_flag_s(i), 
                    RXDATA_ERRORSEEN_FLAG_O                        => GBTBANK_RXDATA_ERRORSEEN_FLAG_O(i),
                    RXEXTRADATA_WIDEBUS_ERRORSEEN_FLAG_O           => GBTBANK_RXEXTRADATA_WIDEBUS_ERRORSEEN_FLAG_O(i)
                );
        end generate;
+       GBTBANK_GBTRXREADY_LOST_FLAG_O <= gbtbank_gbtrxready_lost_flag_s;
        
    end generate;
    
@@ -509,9 +542,12 @@ begin                 --========####   Architecture Body   ####========--
        -- GBT RX Status   --
        --=================--
        GBT_RXREADY_o            => gbt_rxready_s,
-       GBT_ISDATAFLAG_o         => GBTBANK_RX_ISDATA_SEL_O,
-       GBT_ERRORDETECTED_o      => GBTBANK_RX_ERRORDETECTED_O,
-       GBT_ERRORFLAG_o          => GBTBANK_RX_BITMODIFIED_FLAG_O,
+       --GBT_ISDATAFLAG_o         => GBTBANK_RX_ISDATA_SEL_O,
+       GBT_ISDATAFLAG_o         => gbtbank_rx_isdata_sel_s,
+       --GBT_ERRORDETECTED_o      => GBTBANK_RX_ERRORDETECTED_O,
+       GBT_ERRORDETECTED_o      => gbtbank_rx_errordetected_s,
+       --GBT_ERRORFLAG_o          => GBTBANK_RX_BITMODIFIED_FLAG_O,
+       GBT_ERRORFLAG_o          => gbtbank_rx_bitmodified_flag_s,
        
        --================--
        -- MGT Control    --
@@ -527,7 +563,8 @@ begin                 --========####   Architecture Body   ####========--
        MGT_RXREADY_o            => mgt_rxready_s, --GBTBANK_LINK_RX_READY_O,
        MGT_DEVSPECIFIC_o        => mgt_devspecific_from_s,
        MGT_HEADERFLAG_o         => mgt_headerflag_s,
-       MGT_RSTCNT_o             => GBTBANK_RXBITSLIP_RST_CNT_O,
+       --MGT_RSTCNT_o             => GBTBANK_RXBITSLIP_RST_CNT_O,
+       MGT_RSTCNT_o             => gbtbank_rxbitslip_rst_cnt_s,
        --MGT_HEADERLOCKED_o       => open,
        
        --========--
@@ -540,6 +577,11 @@ begin                 --========####   Architecture Body   ####========--
        WB_RXDATA_o              => wb_rxdata_s
      
    );
+   GBTBANK_RXBITSLIP_RST_CNT_O <= gbtbank_rxbitslip_rst_cnt_s;
+   GBTBANK_RX_ISDATA_SEL_O <= gbtbank_rx_isdata_sel_s;
+   GBTBANK_RX_ERRORDETECTED_O <= gbtbank_rx_errordetected_s;
+   GBTBANK_RX_BITMODIFIED_FLAG_O <= gbtbank_rx_bitmodified_flag_s;
+
   
   --============--
   -- Match flag --
@@ -566,6 +608,67 @@ begin                 --========####   Architecture Body   ####========--
        end generate;
    
    end generate;
+
+   dpr_clk_ila : ila_256
+     port map (
+       CLK => GBTBANK_MGT_DRP_CLK,
+       PROBE0 => dpr_clk_probe 
+     );
+   dpr_clk_probe(22) <= mgt_rxready_s(1);
+   dpr_clk_probe(21) <= mgt_txready_s(1);
+   dpr_clk_probe(20 downto 13) <= gbtbank_rxbitslip_rst_cnt_s(1);
+   dpr_clk_probe(12 downto 11) <= gbtBank_txEncodingSel;
+   dpr_clk_probe(10 downto 9) <= gbtBank_rxEncodingSel;
+   dpr_clk_probe(8) <= RX_ENCODING_SEL_i(1);
+   dpr_clk_probe(7) <= gbt_rxreset_s(1);
+   dpr_clk_probe(6) <= mgt_rxreset_s(1);
+   dpr_clk_probe(5) <= TX_ENCODING_SEL_i(1);
+   dpr_clk_probe(4) <= gbt_txreset_s(1);
+   dpr_clk_probe(3) <= mgt_txreset_s(1);
+   dpr_clk_probe(2) <= GBTBANK_MANUAL_RESET_RX_I;
+   dpr_clk_probe(1) <= GBTBANK_MANUAL_RESET_TX_I;
+   dpr_clk_probe(0) <= GBTBANK_GENERAL_RESET_I;
+
+   --ref_clk_ila : ila_256
+   --  port map (
+   --    CLK => XCVRCLK,
+   --    PROBE0 => ref_clk_probe 
+   --  );
+   --ref_clk_probe(1) <= mgt_rxready_s(1);
+   --ref_clk_probe(0) <= mgt_txready_s(1);
+
+   rx_clk_ila : ila_256
+     port map (
+       CLK => gbt_rxframeclk_s(1), -- 40.079 MHz in BC_CLOCK scheme or recovered 120.237 MHz in FULL_MGTREFQ scheme
+       PROBE0 => rx_clk_probe 
+     );
+   rx_clk_probe(205) <= gbt_rxclkenLogic_s(1);
+   rx_clk_probe(204) <= gbtbank_gbtrxready_lost_flag_s(1);
+   rx_clk_probe(203 downto 120) <= gbtbank_rx_bitmodified_flag_s(1);
+   rx_clk_probe(119) <= gbtbank_rx_errordetected_s(1);
+   rx_clk_probe(118) <= gbt_rxready_s(1);
+   rx_clk_probe(117) <= mgt_headerflag_s(1);
+   rx_clk_probe(116) <= gbtbank_rx_isdata_sel_s(1);
+   rx_clk_probe(115 downto 84) <= wb_rxdata_s(1);
+   rx_clk_probe(83 downto 0) <= gbt_rxdata_s(1);
+
+   bc_clock_scheme_gen : if CLOCKING_SCHEME = BC_CLOCK generate
+     link_gen: for i in 1 to NUM_LINKS generate
+       gbt_txframeclk_s_jb(i) <= FRAMECLK_40MHZ;
+     end generate;
+   end generate;
+   full_mgtfreq_scheme_gen : if CLOCKING_SCHEME = FULL_MGTFREQ generate
+     gbt_txframeclk_s_jb <= mgt_txwordclk_s;
+   end generate;
+   tx_clk_ila : ila_256
+     port map (
+       CLK => gbt_txframeclk_s_jb(1), -- 40.079 MHz in BC_CLOCK scheme or refclk 120.237 MHz in FULL_MGTREFQ scheme
+       PROBE0 => tx_clk_probe 
+     );
+   tx_clk_probe(117) <= gbt_txclken_s(1);
+   tx_clk_probe(116) <= GBTBANK_TX_ISDATA_SEL_I(1);
+   tx_clk_probe(115 downto 84) <= wb_txdata_s(1);
+   tx_clk_probe(83 downto 0) <= gbt_txdata_s(1);
       
    --=====================================================================================--   
 end structural;

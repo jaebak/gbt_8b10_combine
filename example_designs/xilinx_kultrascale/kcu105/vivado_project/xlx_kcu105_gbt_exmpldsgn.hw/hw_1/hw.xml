@@ -1,17 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Product Version: Vivado v2016.3 (64-bit)                     -->
+<!-- Product Version: Vivado v2019.2 (64-bit)                     -->
 <!--                                                              -->
-<!-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.        -->
+<!-- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.        -->
 
 <hwsession version="1" minor="2">
   <device name="xcku040_0" gui_info="dashboard1=hw_ila_1[xcku040_0/hw_ila_1/Capture Setup=ILA_CAPTURE_1;xcku040_0/hw_ila_1/Waveform=ILA_WAVE_1;xcku040_0/hw_ila_1/Status=ILA_STATUS_1;xcku040_0/hw_ila_1/Settings=ILA_SETTINGS_1;xcku040_0/hw_ila_1/Trigger Setup=ILA_TRIGGER_1;],dashboard2=hw_ila_2[xcku040_0/hw_ila_2/Trigger Setup=ILA_TRIGGER_1;xcku040_0/hw_ila_2/Status=ILA_STATUS_1;xcku040_0/hw_ila_2/Settings=ILA_SETTINGS_1;xcku040_0/hw_ila_2/Capture Setup=ILA_CAPTURE_1;xcku040_0/hw_ila_2/Waveform=ILA_WAVE_1;],dashboard3=hw_vios[xcku040_0/hw_vio_1=VIO_PROBES_1;]"/>
   <ObjectList object_type="hw_device" gui_info="">
     <Object name="xcku040_0" gui_info="">
+      <Properties Property="FULL_PROBES.FILE" value="$_project_name_.runs/impl_1/debug_nets.ltx"/>
       <Properties Property="PROBES.FILE" value="$_project_name_.runs/impl_1/debug_nets.ltx"/>
       <Properties Property="PROGRAM.HW_BITSTREAM" value="$_project_name_.runs/impl_1/kcu105_gbt_example_design.bit"/>
+      <Properties Property="SLR.COUNT" value="1"/>
     </Object>
   </ObjectList>
   <ObjectList object_type="hw_ila" gui_info="">
+    <Object name="" gui_info="">
+      <Properties Property="CONTROL.TRIGGER_CONDITION" value="AND"/>
+      <Properties Property="CORE_REFRESH_RATE_MS" value="500"/>
+    </Object>
+    <Object name="gbtExmplDsgn_inst/dpr_clk_ila" gui_info="">
+      <Properties Property="CONTROL.TRIGGER_CONDITION" value="AND"/>
+      <Properties Property="CORE_REFRESH_RATE_MS" value="500"/>
+    </Object>
+    <Object name="gbtExmplDsgn_inst/rx_clk_ila" gui_info="">
+      <Properties Property="CONTROL.TRIGGER_CONDITION" value="AND"/>
+      <Properties Property="CORE_REFRESH_RATE_MS" value="500"/>
+    </Object>
+    <Object name="gbtExmplDsgn_inst/tx_clk_ila" gui_info="">
+      <Properties Property="CONTROL.TRIGGER_CONDITION" value="AND"/>
+      <Properties Property="CORE_REFRESH_RATE_MS" value="500"/>
+    </Object>
     <Object name="rxIla" gui_info="">
       <Properties Property="CONTROL.TRIGGER_CONDITION" value="AND"/>
       <Properties Property="CORE_REFRESH_RATE_MS" value="500"/>
@@ -61,35 +79,221 @@
     <Object name="hw_vio_1" gui_info="hw_vios/hw_vio_1/TablePreference=5	602	Name	0	2147483647	15	269	269	Value	1	2147483647	15	167	167	Activity	2	2147483647	15	55	55	Direction	3	2147483647	15	61	61	VIO	4	2147483647	15	50	50			1	6	1	Name	Value	Activity	Direction	VIO"/>
   </ObjectList>
   <probeset name="hw project" active="false">
-    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="user" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="CELL_HINT" value="gbtExmplDsgn_inst/dpr_clk_ila"/>
         <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
         <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
-        <Option Id="HW_ILA" value="hw_ila_2"/>
-        <Option Id="MAP" value="probe3[0]"/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[0]"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
-        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="SOURCE" value="user"/>
         <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
       </probeOptions>
       <nets>
-        <net name="PROBE3"/>
+        <net name="GBTBANK_GENERAL_RESET_I"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="user" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="CELL_HINT" value="gbtExmplDsgn_inst/dpr_clk_ila"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[2]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="user"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="GBTBANK_MANUAL_RESET_RX_I"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="user" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="CELL_HINT" value="gbtExmplDsgn_inst/dpr_clk_ila"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[1]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="user"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="GBTBANK_MANUAL_RESET_TX_I"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="user" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="CELL_HINT" value="gbtExmplDsgn_inst/tx_clk_ila"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_3"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[116]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="user"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="GBTBANK_TX_ISDATA_SEL_I"/>
       </nets>
     </probe>
     <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
         <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
         <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
-        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="HW_ILA" value="hw_ila_5"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
         <Option Id="MAP" value="probe3[0]"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="SOURCE" value="netlist"/>
         <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="PROBE3"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="user" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="CELL_HINT" value="gbtExmplDsgn_inst/dpr_clk_ila"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[8]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="user"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="RX_ENCODING_SEL_i"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="user" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="CELL_HINT" value="gbtExmplDsgn_inst/dpr_clk_ila"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[5]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="user"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="TX_ENCODING_SEL_i"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="user" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq2&apos;hX"/>
+        <Option Id="CELL_HINT" value="gbtExmplDsgn_inst/dpr_clk_ila"/>
+        <Option Id="COMPARE_VALUE.0" value="eq2&apos;hX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[10:9]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="user"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq2&apos;hX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="gbtBank_rxEncodingSel[1]"/>
+        <net name="gbtBank_rxEncodingSel[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="user" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq2&apos;hX"/>
+        <Option Id="CELL_HINT" value="gbtExmplDsgn_inst/dpr_clk_ila"/>
+        <Option Id="COMPARE_VALUE.0" value="eq2&apos;hX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[12:11]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="user"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq2&apos;hX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="gbtBank_txEncodingSel[1]"/>
+        <net name="gbtBank_txEncodingSel[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_4"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe3[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
       </probeOptions>
       <nets>
         <net name="gbtErrorDetected"/>
@@ -97,16 +301,1478 @@
     </probe>
     <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
-        <Option Id="CAPTURE_COMPARE_VALUE" value="eq84&apos;hX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
-        <Option Id="COMPARE_VALUE.0" value="eq84&apos;hX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq256&apos;hXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq256&apos;hXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
         <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
         <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[255:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq256&apos;hXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[255]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[254]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[253]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[252]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[251]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[250]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[249]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[248]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[247]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[246]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[245]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[244]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[243]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[242]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[241]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[240]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[239]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[238]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[237]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[236]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[235]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[234]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[233]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[232]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[231]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[230]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[229]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[228]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[227]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[226]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[225]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[224]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[223]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[222]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[221]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[220]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[219]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[218]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[217]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[216]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[215]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[214]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[213]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[212]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[211]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[210]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[209]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[208]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[207]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[206]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[205]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[204]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[203]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[202]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[201]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[200]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[199]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[198]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[197]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[196]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[195]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[194]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[193]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[192]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[191]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[190]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[189]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[188]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[187]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[186]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[185]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[184]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[183]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[182]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[181]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[180]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[179]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[178]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[177]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[176]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[175]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[174]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[173]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[172]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[171]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[170]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[169]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[168]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[167]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[166]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[165]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[164]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[163]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[162]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[161]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[160]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[159]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[158]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[157]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[156]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[155]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[154]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[153]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[152]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[151]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[150]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[149]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[148]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[147]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[146]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[145]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[144]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[143]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[142]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[141]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[140]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[139]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[138]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[137]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[136]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[135]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[134]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[133]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[132]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[131]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[130]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[129]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[128]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[127]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[126]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[125]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[124]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[123]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[122]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[121]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[120]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[119]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[118]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[117]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[116]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[115]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[114]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[113]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[112]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[111]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[110]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[109]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[108]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[107]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[106]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[105]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[104]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[103]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[102]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[101]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[100]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[99]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[98]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[97]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[96]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[95]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[94]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[93]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[92]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[91]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[90]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[89]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[88]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[87]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[86]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[85]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[84]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[83]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[82]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[81]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[80]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[79]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[78]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[77]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[76]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[75]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[74]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[73]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[72]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[71]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[70]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[69]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[68]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[67]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[66]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[65]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[64]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[63]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[62]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[61]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[60]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[59]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[58]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[57]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[56]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[55]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[54]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[53]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[52]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[51]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[50]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[49]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[48]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[47]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[46]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[45]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[44]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[43]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[42]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[41]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[40]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[39]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[38]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[37]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[36]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[35]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[34]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[33]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[32]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[31]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[30]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[29]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[28]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[27]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[26]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[25]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[24]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[23]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[22]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[21]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[20]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[19]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[18]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[17]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[16]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[15]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[14]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[13]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[12]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[11]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[10]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[9]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[8]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[7]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[6]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[5]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[4]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[3]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[2]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[1]"/>
+        <net name="gbtExmplDsgn_inst/dpr_clk_probe[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq256&apos;hXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq256&apos;hXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_2"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[255:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq256&apos;hXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[255]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[254]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[253]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[252]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[251]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[250]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[249]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[248]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[247]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[246]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[245]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[244]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[243]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[242]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[241]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[240]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[239]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[238]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[237]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[236]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[235]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[234]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[233]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[232]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[231]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[230]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[229]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[228]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[227]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[226]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[225]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[224]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[223]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[222]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[221]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[220]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[219]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[218]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[217]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[216]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[215]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[214]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[213]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[212]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[211]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[210]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[209]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[208]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[207]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[206]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[205]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[204]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[203]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[202]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[201]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[200]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[199]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[198]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[197]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[196]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[195]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[194]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[193]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[192]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[191]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[190]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[189]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[188]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[187]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[186]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[185]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[184]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[183]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[182]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[181]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[180]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[179]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[178]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[177]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[176]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[175]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[174]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[173]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[172]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[171]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[170]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[169]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[168]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[167]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[166]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[165]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[164]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[163]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[162]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[161]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[160]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[159]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[158]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[157]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[156]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[155]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[154]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[153]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[152]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[151]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[150]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[149]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[148]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[147]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[146]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[145]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[144]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[143]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[142]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[141]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[140]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[139]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[138]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[137]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[136]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[135]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[134]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[133]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[132]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[131]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[130]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[129]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[128]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[127]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[126]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[125]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[124]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[123]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[122]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[121]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[120]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[119]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[118]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[117]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[116]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[115]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[114]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[113]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[112]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[111]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[110]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[109]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[108]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[107]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[106]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[105]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[104]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[103]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[102]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[101]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[100]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[99]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[98]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[97]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[96]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[95]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[94]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[93]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[92]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[91]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[90]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[89]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[88]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[87]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[86]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[85]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[84]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[83]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[82]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[81]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[80]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[79]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[78]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[77]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[76]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[75]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[74]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[73]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[72]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[71]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[70]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[69]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[68]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[67]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[66]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[65]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[64]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[63]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[62]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[61]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[60]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[59]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[58]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[57]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[56]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[55]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[54]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[53]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[52]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[51]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[50]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[49]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[48]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[47]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[46]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[45]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[44]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[43]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[42]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[41]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[40]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[39]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[38]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[37]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[36]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[35]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[34]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[33]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[32]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[31]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[30]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[29]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[28]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[27]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[26]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[25]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[24]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[23]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[22]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[21]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[20]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[19]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[18]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[17]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[16]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[15]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[14]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[13]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[12]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[11]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[10]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[9]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[8]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[7]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[6]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[5]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[4]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[3]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[2]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[1]"/>
+        <net name="gbtExmplDsgn_inst/rx_clk_probe[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq256&apos;hXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq256&apos;hXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_3"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[255:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq256&apos;hXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[255]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[254]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[253]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[252]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[251]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[250]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[249]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[248]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[247]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[246]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[245]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[244]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[243]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[242]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[241]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[240]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[239]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[238]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[237]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[236]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[235]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[234]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[233]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[232]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[231]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[230]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[229]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[228]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[227]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[226]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[225]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[224]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[223]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[222]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[221]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[220]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[219]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[218]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[217]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[216]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[215]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[214]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[213]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[212]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[211]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[210]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[209]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[208]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[207]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[206]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[205]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[204]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[203]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[202]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[201]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[200]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[199]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[198]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[197]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[196]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[195]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[194]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[193]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[192]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[191]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[190]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[189]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[188]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[187]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[186]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[185]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[184]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[183]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[182]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[181]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[180]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[179]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[178]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[177]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[176]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[175]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[174]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[173]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[172]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[171]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[170]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[169]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[168]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[167]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[166]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[165]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[164]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[163]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[162]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[161]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[160]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[159]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[158]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[157]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[156]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[155]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[154]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[153]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[152]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[151]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[150]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[149]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[148]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[147]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[146]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[145]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[144]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[143]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[142]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[141]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[140]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[139]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[138]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[137]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[136]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[135]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[134]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[133]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[132]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[131]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[130]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[129]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[128]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[127]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[126]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[125]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[124]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[123]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[122]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[121]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[120]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[119]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[118]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[117]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[116]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[115]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[114]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[113]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[112]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[111]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[110]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[109]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[108]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[107]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[106]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[105]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[104]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[103]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[102]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[101]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[100]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[99]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[98]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[97]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[96]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[95]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[94]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[93]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[92]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[91]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[90]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[89]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[88]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[87]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[86]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[85]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[84]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[83]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[82]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[81]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[80]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[79]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[78]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[77]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[76]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[75]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[74]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[73]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[72]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[71]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[70]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[69]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[68]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[67]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[66]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[65]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[64]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[63]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[62]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[61]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[60]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[59]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[58]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[57]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[56]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[55]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[54]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[53]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[52]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[51]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[50]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[49]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[48]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[47]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[46]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[45]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[44]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[43]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[42]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[41]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[40]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[39]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[38]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[37]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[36]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[35]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[34]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[33]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[32]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[31]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[30]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[29]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[28]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[27]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[26]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[25]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[24]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[23]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[22]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[21]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[20]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[19]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[18]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[17]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[16]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[15]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[14]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[13]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[12]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[11]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[10]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[9]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[8]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[7]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[6]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[5]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[4]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[3]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[2]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[1]"/>
+        <net name="gbtExmplDsgn_inst/tx_clk_probe[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="user" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="CELL_HINT" value="gbtExmplDsgn_inst/rx_clk_ila"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_2"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[205]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="user"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="gbt_rxclkenLogic_s"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="user" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq84&apos;hX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
+        <Option Id="CELL_HINT" value="gbtExmplDsgn_inst/rx_clk_ila"/>
+        <Option Id="COMPARE_VALUE.0" value="eq84&apos;hX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_2"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[83:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="user"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq84&apos;hX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="gbt_rxdata_s[83]"/>
+        <net name="gbt_rxdata_s[82]"/>
+        <net name="gbt_rxdata_s[81]"/>
+        <net name="gbt_rxdata_s[80]"/>
+        <net name="gbt_rxdata_s[79]"/>
+        <net name="gbt_rxdata_s[78]"/>
+        <net name="gbt_rxdata_s[77]"/>
+        <net name="gbt_rxdata_s[76]"/>
+        <net name="gbt_rxdata_s[75]"/>
+        <net name="gbt_rxdata_s[74]"/>
+        <net name="gbt_rxdata_s[73]"/>
+        <net name="gbt_rxdata_s[72]"/>
+        <net name="gbt_rxdata_s[71]"/>
+        <net name="gbt_rxdata_s[70]"/>
+        <net name="gbt_rxdata_s[69]"/>
+        <net name="gbt_rxdata_s[68]"/>
+        <net name="gbt_rxdata_s[67]"/>
+        <net name="gbt_rxdata_s[66]"/>
+        <net name="gbt_rxdata_s[65]"/>
+        <net name="gbt_rxdata_s[64]"/>
+        <net name="gbt_rxdata_s[63]"/>
+        <net name="gbt_rxdata_s[62]"/>
+        <net name="gbt_rxdata_s[61]"/>
+        <net name="gbt_rxdata_s[60]"/>
+        <net name="gbt_rxdata_s[59]"/>
+        <net name="gbt_rxdata_s[58]"/>
+        <net name="gbt_rxdata_s[57]"/>
+        <net name="gbt_rxdata_s[56]"/>
+        <net name="gbt_rxdata_s[55]"/>
+        <net name="gbt_rxdata_s[54]"/>
+        <net name="gbt_rxdata_s[53]"/>
+        <net name="gbt_rxdata_s[52]"/>
+        <net name="gbt_rxdata_s[51]"/>
+        <net name="gbt_rxdata_s[50]"/>
+        <net name="gbt_rxdata_s[49]"/>
+        <net name="gbt_rxdata_s[48]"/>
+        <net name="gbt_rxdata_s[47]"/>
+        <net name="gbt_rxdata_s[46]"/>
+        <net name="gbt_rxdata_s[45]"/>
+        <net name="gbt_rxdata_s[44]"/>
+        <net name="gbt_rxdata_s[43]"/>
+        <net name="gbt_rxdata_s[42]"/>
+        <net name="gbt_rxdata_s[41]"/>
+        <net name="gbt_rxdata_s[40]"/>
+        <net name="gbt_rxdata_s[39]"/>
+        <net name="gbt_rxdata_s[38]"/>
+        <net name="gbt_rxdata_s[37]"/>
+        <net name="gbt_rxdata_s[36]"/>
+        <net name="gbt_rxdata_s[35]"/>
+        <net name="gbt_rxdata_s[34]"/>
+        <net name="gbt_rxdata_s[33]"/>
+        <net name="gbt_rxdata_s[32]"/>
+        <net name="gbt_rxdata_s[31]"/>
+        <net name="gbt_rxdata_s[30]"/>
+        <net name="gbt_rxdata_s[29]"/>
+        <net name="gbt_rxdata_s[28]"/>
+        <net name="gbt_rxdata_s[27]"/>
+        <net name="gbt_rxdata_s[26]"/>
+        <net name="gbt_rxdata_s[25]"/>
+        <net name="gbt_rxdata_s[24]"/>
+        <net name="gbt_rxdata_s[23]"/>
+        <net name="gbt_rxdata_s[22]"/>
+        <net name="gbt_rxdata_s[21]"/>
+        <net name="gbt_rxdata_s[20]"/>
+        <net name="gbt_rxdata_s[19]"/>
+        <net name="gbt_rxdata_s[18]"/>
+        <net name="gbt_rxdata_s[17]"/>
+        <net name="gbt_rxdata_s[16]"/>
+        <net name="gbt_rxdata_s[15]"/>
+        <net name="gbt_rxdata_s[14]"/>
+        <net name="gbt_rxdata_s[13]"/>
+        <net name="gbt_rxdata_s[12]"/>
+        <net name="gbt_rxdata_s[11]"/>
+        <net name="gbt_rxdata_s[10]"/>
+        <net name="gbt_rxdata_s[9]"/>
+        <net name="gbt_rxdata_s[8]"/>
+        <net name="gbt_rxdata_s[7]"/>
+        <net name="gbt_rxdata_s[6]"/>
+        <net name="gbt_rxdata_s[5]"/>
+        <net name="gbt_rxdata_s[4]"/>
+        <net name="gbt_rxdata_s[3]"/>
+        <net name="gbt_rxdata_s[2]"/>
+        <net name="gbt_rxdata_s[1]"/>
+        <net name="gbt_rxdata_s[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="user" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="CELL_HINT" value="gbtExmplDsgn_inst/rx_clk_ila"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_2"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[118]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="user"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="gbt_rxready_s"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="user" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="CELL_HINT" value="gbtExmplDsgn_inst/dpr_clk_ila"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[7]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="user"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="gbt_rxreset_s"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="user" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="CELL_HINT" value="gbtExmplDsgn_inst/tx_clk_ila"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_3"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[117]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="user"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="gbt_txclken_s"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="user" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq84&apos;hX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
+        <Option Id="CELL_HINT" value="gbtExmplDsgn_inst/tx_clk_ila"/>
+        <Option Id="COMPARE_VALUE.0" value="eq84&apos;hX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_3"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[83:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="user"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq84&apos;hX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="gbt_txdata_s[83]"/>
+        <net name="gbt_txdata_s[82]"/>
+        <net name="gbt_txdata_s[81]"/>
+        <net name="gbt_txdata_s[80]"/>
+        <net name="gbt_txdata_s[79]"/>
+        <net name="gbt_txdata_s[78]"/>
+        <net name="gbt_txdata_s[77]"/>
+        <net name="gbt_txdata_s[76]"/>
+        <net name="gbt_txdata_s[75]"/>
+        <net name="gbt_txdata_s[74]"/>
+        <net name="gbt_txdata_s[73]"/>
+        <net name="gbt_txdata_s[72]"/>
+        <net name="gbt_txdata_s[71]"/>
+        <net name="gbt_txdata_s[70]"/>
+        <net name="gbt_txdata_s[69]"/>
+        <net name="gbt_txdata_s[68]"/>
+        <net name="gbt_txdata_s[67]"/>
+        <net name="gbt_txdata_s[66]"/>
+        <net name="gbt_txdata_s[65]"/>
+        <net name="gbt_txdata_s[64]"/>
+        <net name="gbt_txdata_s[63]"/>
+        <net name="gbt_txdata_s[62]"/>
+        <net name="gbt_txdata_s[61]"/>
+        <net name="gbt_txdata_s[60]"/>
+        <net name="gbt_txdata_s[59]"/>
+        <net name="gbt_txdata_s[58]"/>
+        <net name="gbt_txdata_s[57]"/>
+        <net name="gbt_txdata_s[56]"/>
+        <net name="gbt_txdata_s[55]"/>
+        <net name="gbt_txdata_s[54]"/>
+        <net name="gbt_txdata_s[53]"/>
+        <net name="gbt_txdata_s[52]"/>
+        <net name="gbt_txdata_s[51]"/>
+        <net name="gbt_txdata_s[50]"/>
+        <net name="gbt_txdata_s[49]"/>
+        <net name="gbt_txdata_s[48]"/>
+        <net name="gbt_txdata_s[47]"/>
+        <net name="gbt_txdata_s[46]"/>
+        <net name="gbt_txdata_s[45]"/>
+        <net name="gbt_txdata_s[44]"/>
+        <net name="gbt_txdata_s[43]"/>
+        <net name="gbt_txdata_s[42]"/>
+        <net name="gbt_txdata_s[41]"/>
+        <net name="gbt_txdata_s[40]"/>
+        <net name="gbt_txdata_s[39]"/>
+        <net name="gbt_txdata_s[38]"/>
+        <net name="gbt_txdata_s[37]"/>
+        <net name="gbt_txdata_s[36]"/>
+        <net name="gbt_txdata_s[35]"/>
+        <net name="gbt_txdata_s[34]"/>
+        <net name="gbt_txdata_s[33]"/>
+        <net name="gbt_txdata_s[32]"/>
+        <net name="gbt_txdata_s[31]"/>
+        <net name="gbt_txdata_s[30]"/>
+        <net name="gbt_txdata_s[29]"/>
+        <net name="gbt_txdata_s[28]"/>
+        <net name="gbt_txdata_s[27]"/>
+        <net name="gbt_txdata_s[26]"/>
+        <net name="gbt_txdata_s[25]"/>
+        <net name="gbt_txdata_s[24]"/>
+        <net name="gbt_txdata_s[23]"/>
+        <net name="gbt_txdata_s[22]"/>
+        <net name="gbt_txdata_s[21]"/>
+        <net name="gbt_txdata_s[20]"/>
+        <net name="gbt_txdata_s[19]"/>
+        <net name="gbt_txdata_s[18]"/>
+        <net name="gbt_txdata_s[17]"/>
+        <net name="gbt_txdata_s[16]"/>
+        <net name="gbt_txdata_s[15]"/>
+        <net name="gbt_txdata_s[14]"/>
+        <net name="gbt_txdata_s[13]"/>
+        <net name="gbt_txdata_s[12]"/>
+        <net name="gbt_txdata_s[11]"/>
+        <net name="gbt_txdata_s[10]"/>
+        <net name="gbt_txdata_s[9]"/>
+        <net name="gbt_txdata_s[8]"/>
+        <net name="gbt_txdata_s[7]"/>
+        <net name="gbt_txdata_s[6]"/>
+        <net name="gbt_txdata_s[5]"/>
+        <net name="gbt_txdata_s[4]"/>
+        <net name="gbt_txdata_s[3]"/>
+        <net name="gbt_txdata_s[2]"/>
+        <net name="gbt_txdata_s[1]"/>
+        <net name="gbt_txdata_s[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="user" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="CELL_HINT" value="gbtExmplDsgn_inst/dpr_clk_ila"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[4]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="user"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="gbt_txreset_s"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="user" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="CELL_HINT" value="gbtExmplDsgn_inst/rx_clk_ila"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_2"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[204]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="user"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="gbtbank_gbtrxready_lost_flag_s"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="user" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq84&apos;hX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
+        <Option Id="CELL_HINT" value="gbtExmplDsgn_inst/rx_clk_ila"/>
+        <Option Id="COMPARE_VALUE.0" value="eq84&apos;hX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_2"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[203:120]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="user"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq84&apos;hX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="gbtbank_rx_bitmodified_flag_s[83]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[82]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[81]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[80]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[79]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[78]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[77]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[76]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[75]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[74]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[73]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[72]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[71]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[70]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[69]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[68]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[67]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[66]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[65]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[64]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[63]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[62]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[61]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[60]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[59]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[58]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[57]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[56]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[55]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[54]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[53]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[52]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[51]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[50]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[49]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[48]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[47]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[46]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[45]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[44]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[43]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[42]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[41]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[40]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[39]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[38]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[37]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[36]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[35]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[34]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[33]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[32]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[31]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[30]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[29]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[28]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[27]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[26]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[25]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[24]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[23]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[22]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[21]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[20]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[19]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[18]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[17]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[16]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[15]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[14]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[13]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[12]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[11]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[10]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[9]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[8]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[7]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[6]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[5]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[4]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[3]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[2]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[1]"/>
+        <net name="gbtbank_rx_bitmodified_flag_s[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="user" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="CELL_HINT" value="gbtExmplDsgn_inst/rx_clk_ila"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_2"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[119]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="user"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="gbtbank_rx_errordetected_s"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="user" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="CELL_HINT" value="gbtExmplDsgn_inst/rx_clk_ila"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_2"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[116]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="user"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="gbtbank_rx_isdata_sel_s"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="user" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq8&apos;hXX"/>
+        <Option Id="CELL_HINT" value="gbtExmplDsgn_inst/dpr_clk_ila"/>
+        <Option Id="COMPARE_VALUE.0" value="eq8&apos;hXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[20:13]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="user"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq8&apos;hXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="gbtbank_rxbitslip_rst_cnt_s[7]"/>
+        <net name="gbtbank_rxbitslip_rst_cnt_s[6]"/>
+        <net name="gbtbank_rxbitslip_rst_cnt_s[5]"/>
+        <net name="gbtbank_rxbitslip_rst_cnt_s[4]"/>
+        <net name="gbtbank_rxbitslip_rst_cnt_s[3]"/>
+        <net name="gbtbank_rxbitslip_rst_cnt_s[2]"/>
+        <net name="gbtbank_rxbitslip_rst_cnt_s[1]"/>
+        <net name="gbtbank_rxbitslip_rst_cnt_s[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="user" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="CELL_HINT" value="gbtExmplDsgn_inst/rx_clk_ila"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_2"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[117]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="user"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="mgt_headerflag_s"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="user" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="CELL_HINT" value="gbtExmplDsgn_inst/dpr_clk_ila"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[22]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="user"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="mgt_rxready_s"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="user" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="CELL_HINT" value="gbtExmplDsgn_inst/dpr_clk_ila"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[6]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="user"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="mgt_rxreset_s"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="user" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="CELL_HINT" value="gbtExmplDsgn_inst/dpr_clk_ila"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[21]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="user"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="mgt_txready_s"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="user" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="CELL_HINT" value="gbtExmplDsgn_inst/dpr_clk_ila"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[3]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="user"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="mgt_txreset_s"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq84&apos;hX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq84&apos;hX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_4"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
         <Option Id="MAP" value="probe0[83:0]"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="SOURCE" value="netlist"/>
         <Option Id="TRIGGER_COMPARE_VALUE" value="eq84&apos;hX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
       </probeOptions>
       <nets>
         <net name="rxData_from_gbtExmplDsgn[83]"/>
@@ -197,6 +1863,142 @@
     </probe>
     <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq116&apos;hX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq116&apos;hX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_4"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe1[115:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq116&apos;hX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[115]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[114]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[113]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[112]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[111]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[110]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[109]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[108]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[107]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[106]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[105]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[104]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[103]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[102]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[101]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[100]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[99]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[98]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[97]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[96]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[95]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[94]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[93]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[92]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[91]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[90]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[89]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[88]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[87]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[86]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[85]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[84]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[83]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[82]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[81]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[80]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[79]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[78]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[77]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[76]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[75]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[74]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[73]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[72]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[71]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[70]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[69]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[68]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[67]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[66]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[65]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[64]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[63]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[62]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[61]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[60]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[59]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[58]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[57]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[56]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[55]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[54]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[53]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[52]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[51]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[50]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[49]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[48]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[47]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[46]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[45]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[44]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[43]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[42]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[41]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[40]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[39]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[38]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[37]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[36]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[35]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[34]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[33]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[32]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[31]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[30]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[29]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[28]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[27]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[26]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[25]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[24]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[23]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[22]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[21]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[20]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[19]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[18]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[17]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[16]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[15]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[14]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[13]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[12]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[11]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[10]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[9]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[8]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[7]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[6]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[5]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[4]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[3]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[2]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[1]"/>
+        <net name="rxExtraDataWidebus_from_gbtExmplDsgn[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq32&apos;hXXXX_XXXX"/>
         <Option Id="DISPLAY_HINT" value=""/>
@@ -260,18 +2062,43 @@
         <net name="rxIsData_from_gbtExmplDsgn"/>
       </nets>
     </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_4"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe2[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="rxIsData_from_gbtExmplDsgn_1"/>
+      </nets>
+    </probe>
     <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq84&apos;hX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq84&apos;hX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
         <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
-        <Option Id="HW_ILA" value="hw_ila_2"/>
+        <Option Id="HW_ILA" value="hw_ila_5"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
         <Option Id="MAP" value="probe0[83:0]"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="SOURCE" value="netlist"/>
         <Option Id="TRIGGER_COMPARE_VALUE" value="eq84&apos;hX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
       </probeOptions>
       <nets>
         <net name="txData_from_gbtExmplDsgn[83]"/>
@@ -362,6 +2189,142 @@
     </probe>
     <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq116&apos;hX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq116&apos;hX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_5"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe1[115:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq116&apos;hX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[115]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[114]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[113]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[112]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[111]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[110]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[109]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[108]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[107]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[106]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[105]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[104]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[103]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[102]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[101]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[100]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[99]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[98]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[97]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[96]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[95]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[94]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[93]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[92]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[91]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[90]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[89]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[88]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[87]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[86]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[85]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[84]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[83]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[82]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[81]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[80]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[79]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[78]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[77]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[76]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[75]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[74]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[73]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[72]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[71]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[70]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[69]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[68]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[67]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[66]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[65]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[64]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[63]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[62]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[61]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[60]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[59]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[58]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[57]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[56]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[55]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[54]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[53]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[52]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[51]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[50]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[49]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[48]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[47]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[46]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[45]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[44]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[43]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[42]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[41]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[40]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[39]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[38]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[37]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[36]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[35]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[34]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[33]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[32]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[31]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[30]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[29]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[28]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[27]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[26]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[25]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[24]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[23]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[22]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[21]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[20]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[19]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[18]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[17]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[16]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[15]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[14]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[13]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[12]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[11]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[10]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[9]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[8]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[7]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[6]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[5]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[4]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[3]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[2]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[1]"/>
+        <net name="txExtraDataWidebus_from_gbtExmplDsgn[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq32&apos;hXXXX_XXXX"/>
         <Option Id="DISPLAY_HINT" value=""/>
@@ -412,17 +2375,127 @@
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
         <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
         <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
-        <Option Id="HW_ILA" value="hw_ila_2"/>
+        <Option Id="HW_ILA" value="hw_ila_5"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
         <Option Id="MAP" value="probe2[0]"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="SOURCE" value="netlist"/>
         <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
       </probeOptions>
       <nets>
         <net name="txIsDataSel_from_user_1"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="user" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="CELL_HINT" value="gbtExmplDsgn_inst/rx_clk_ila"/>
+        <Option Id="COMPARE_VALUE.0" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_2"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[115:84]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="user"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="wb_rxdata_s[31]"/>
+        <net name="wb_rxdata_s[30]"/>
+        <net name="wb_rxdata_s[29]"/>
+        <net name="wb_rxdata_s[28]"/>
+        <net name="wb_rxdata_s[27]"/>
+        <net name="wb_rxdata_s[26]"/>
+        <net name="wb_rxdata_s[25]"/>
+        <net name="wb_rxdata_s[24]"/>
+        <net name="wb_rxdata_s[23]"/>
+        <net name="wb_rxdata_s[22]"/>
+        <net name="wb_rxdata_s[21]"/>
+        <net name="wb_rxdata_s[20]"/>
+        <net name="wb_rxdata_s[19]"/>
+        <net name="wb_rxdata_s[18]"/>
+        <net name="wb_rxdata_s[17]"/>
+        <net name="wb_rxdata_s[16]"/>
+        <net name="wb_rxdata_s[15]"/>
+        <net name="wb_rxdata_s[14]"/>
+        <net name="wb_rxdata_s[13]"/>
+        <net name="wb_rxdata_s[12]"/>
+        <net name="wb_rxdata_s[11]"/>
+        <net name="wb_rxdata_s[10]"/>
+        <net name="wb_rxdata_s[9]"/>
+        <net name="wb_rxdata_s[8]"/>
+        <net name="wb_rxdata_s[7]"/>
+        <net name="wb_rxdata_s[6]"/>
+        <net name="wb_rxdata_s[5]"/>
+        <net name="wb_rxdata_s[4]"/>
+        <net name="wb_rxdata_s[3]"/>
+        <net name="wb_rxdata_s[2]"/>
+        <net name="wb_rxdata_s[1]"/>
+        <net name="wb_rxdata_s[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="user" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="CELL_HINT" value="gbtExmplDsgn_inst/tx_clk_ila"/>
+        <Option Id="COMPARE_VALUE.0" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_3"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[115:84]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="user"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="wb_txdata_s[31]"/>
+        <net name="wb_txdata_s[30]"/>
+        <net name="wb_txdata_s[29]"/>
+        <net name="wb_txdata_s[28]"/>
+        <net name="wb_txdata_s[27]"/>
+        <net name="wb_txdata_s[26]"/>
+        <net name="wb_txdata_s[25]"/>
+        <net name="wb_txdata_s[24]"/>
+        <net name="wb_txdata_s[23]"/>
+        <net name="wb_txdata_s[22]"/>
+        <net name="wb_txdata_s[21]"/>
+        <net name="wb_txdata_s[20]"/>
+        <net name="wb_txdata_s[19]"/>
+        <net name="wb_txdata_s[18]"/>
+        <net name="wb_txdata_s[17]"/>
+        <net name="wb_txdata_s[16]"/>
+        <net name="wb_txdata_s[15]"/>
+        <net name="wb_txdata_s[14]"/>
+        <net name="wb_txdata_s[13]"/>
+        <net name="wb_txdata_s[12]"/>
+        <net name="wb_txdata_s[11]"/>
+        <net name="wb_txdata_s[10]"/>
+        <net name="wb_txdata_s[9]"/>
+        <net name="wb_txdata_s[8]"/>
+        <net name="wb_txdata_s[7]"/>
+        <net name="wb_txdata_s[6]"/>
+        <net name="wb_txdata_s[5]"/>
+        <net name="wb_txdata_s[4]"/>
+        <net name="wb_txdata_s[3]"/>
+        <net name="wb_txdata_s[2]"/>
+        <net name="wb_txdata_s[1]"/>
+        <net name="wb_txdata_s[0]"/>
       </nets>
     </probe>
     <probe type="vio_input" busType="bus" source="netlist" spec="VIO_INPUT_V2_RT">
@@ -430,7 +2503,7 @@
         <Option Id="ACTIVITY_PERSISTENCE" value="SHORT"/>
         <Option Id="DISPLAY_HINT" value=""/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
-        <Option Id="HW_VIO" value="hw_vio_1"/>
+        <Option Id="HW_VIO" value="hw_vio_2"/>
         <Option Id="INPUT_VALUE_RADIX" value="UNSIGNED"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
@@ -476,7 +2549,7 @@
         <Option Id="ACTIVITY_PERSISTENCE" value="SHORT"/>
         <Option Id="DISPLAY_HINT" value=""/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
-        <Option Id="HW_VIO" value="hw_vio_1"/>
+        <Option Id="HW_VIO" value="hw_vio_2"/>
         <Option Id="INPUT_VALUE_RADIX" value="UNSIGNED"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
@@ -522,7 +2595,7 @@
         <Option Id="ACTIVITY_PERSISTENCE" value="SHORT"/>
         <Option Id="DISPLAY_HINT" value="InputDisplay:LED;LED_Low:0,255,0,;LED_High:255,0,0,;"/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
-        <Option Id="HW_VIO" value="hw_vio_1"/>
+        <Option Id="HW_VIO" value="hw_vio_2"/>
         <Option Id="INPUT_VALUE_RADIX" value="BINARY"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
@@ -537,7 +2610,7 @@
         <Option Id="ACTIVITY_PERSISTENCE" value="SHORT"/>
         <Option Id="DISPLAY_HINT" value="InputDisplay:LED;LED_Low:255,0,0,;LED_High:0,255,0,;"/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
-        <Option Id="HW_VIO" value="hw_vio_1"/>
+        <Option Id="HW_VIO" value="hw_vio_2"/>
         <Option Id="INPUT_VALUE_RADIX" value="BINARY"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
@@ -552,7 +2625,7 @@
         <Option Id="ACTIVITY_PERSISTENCE" value="SHORT"/>
         <Option Id="DISPLAY_HINT" value="InputDisplay:LED;LED_Low:128,128,128,;LED_High:0,0,255,;"/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
-        <Option Id="HW_VIO" value="hw_vio_1"/>
+        <Option Id="HW_VIO" value="hw_vio_2"/>
         <Option Id="INPUT_VALUE_RADIX" value="BINARY"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
@@ -567,7 +2640,7 @@
         <Option Id="ACTIVITY_PERSISTENCE" value="SHORT"/>
         <Option Id="DISPLAY_HINT" value="InputDisplay:LED;LED_Low:128,128,128,;LED_High:0,0,255,;"/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
-        <Option Id="HW_VIO" value="hw_vio_1"/>
+        <Option Id="HW_VIO" value="hw_vio_2"/>
         <Option Id="INPUT_VALUE_RADIX" value="BINARY"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
@@ -582,7 +2655,7 @@
         <Option Id="ACTIVITY_PERSISTENCE" value="SHORT"/>
         <Option Id="DISPLAY_HINT" value="InputDisplay:LED;LED_Low:255,0,0,;LED_High:0,255,0,;"/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
-        <Option Id="HW_VIO" value="hw_vio_1"/>
+        <Option Id="HW_VIO" value="hw_vio_2"/>
         <Option Id="INPUT_VALUE_RADIX" value="BINARY"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
@@ -597,7 +2670,7 @@
         <Option Id="ACTIVITY_PERSISTENCE" value="SHORT"/>
         <Option Id="DISPLAY_HINT" value=""/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
-        <Option Id="HW_VIO" value="hw_vio_1"/>
+        <Option Id="HW_VIO" value="hw_vio_2"/>
         <Option Id="INPUT_VALUE_RADIX" value="BINARY"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
@@ -612,7 +2685,7 @@
         <Option Id="ACTIVITY_PERSISTENCE" value="SHORT"/>
         <Option Id="DISPLAY_HINT" value=""/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
-        <Option Id="HW_VIO" value="hw_vio_1"/>
+        <Option Id="HW_VIO" value="hw_vio_2"/>
         <Option Id="INPUT_VALUE_RADIX" value="BINARY"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
@@ -627,7 +2700,7 @@
         <Option Id="ACTIVITY_PERSISTENCE" value="SHORT"/>
         <Option Id="DISPLAY_HINT" value=""/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
-        <Option Id="HW_VIO" value="hw_vio_1"/>
+        <Option Id="HW_VIO" value="hw_vio_2"/>
         <Option Id="INPUT_VALUE_RADIX" value="HEX"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
@@ -642,7 +2715,7 @@
         <net name="probe_in5[0]"/>
       </nets>
     </probe>
-    <probe type="vio_input" busType="bus" source="netlist" spec="VIO_INPUT_V2_RT">
+    <probe type="vio_input" busType="net" source="netlist" spec="VIO_INPUT_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="ACTIVITY_PERSISTENCE" value="SHORT"/>
         <Option Id="DISPLAY_HINT" value=""/>
@@ -667,7 +2740,7 @@
         <Option Id="ACTIVITY_PERSISTENCE" value="SHORT"/>
         <Option Id="DISPLAY_HINT" value=""/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
-        <Option Id="HW_VIO" value="hw_vio_1"/>
+        <Option Id="HW_VIO" value="hw_vio_2"/>
         <Option Id="INPUT_VALUE_RADIX" value="UNSIGNED"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
@@ -689,7 +2762,7 @@
         <Option Id="ACTIVITY_PERSISTENCE" value="SHORT"/>
         <Option Id="DISPLAY_HINT" value="InputDisplay:LED;LED_Low:0,255,0,;LED_High:255,0,0,;"/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
-        <Option Id="HW_VIO" value="hw_vio_1"/>
+        <Option Id="HW_VIO" value="hw_vio_2"/>
         <Option Id="INPUT_VALUE_RADIX" value="BINARY"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
@@ -704,7 +2777,7 @@
         <Option Id="ACTIVITY_PERSISTENCE" value="SHORT"/>
         <Option Id="DISPLAY_HINT" value="InputDisplay:LED;LED_Low:0,255,0,;LED_High:255,0,0,;"/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
-        <Option Id="HW_VIO" value="hw_vio_1"/>
+        <Option Id="HW_VIO" value="hw_vio_2"/>
         <Option Id="INPUT_VALUE_RADIX" value="BINARY"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
@@ -719,7 +2792,7 @@
         <Option Id="ACTIVITY_PERSISTENCE" value="SHORT"/>
         <Option Id="DISPLAY_HINT" value="InputDisplay:LED;LED_Low:255,0,0,;LED_High:0,255,0,;"/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
-        <Option Id="HW_VIO" value="hw_vio_1"/>
+        <Option Id="HW_VIO" value="hw_vio_2"/>
         <Option Id="INPUT_VALUE_RADIX" value="BINARY"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
@@ -727,6 +2800,21 @@
       </probeOptions>
       <nets>
         <net name="rxFrameClkReady_from_gbtExmplDsgn"/>
+      </nets>
+    </probe>
+    <probe type="vio_input" busType="net" source="netlist" spec="VIO_INPUT_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="ACTIVITY_PERSISTENCE" value="SHORT"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_VIO" value="hw_vio_2"/>
+        <Option Id="INPUT_VALUE_RADIX" value="BINARY"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+      </probeOptions>
+      <nets>
+        <net name="rxIsData_from_gbtExmplDsgn"/>
       </nets>
     </probe>
     <probe type="vio_input" busType="net" source="netlist" spec="VIO_INPUT_V2_RT">
@@ -764,7 +2852,7 @@
         <Option Id="ACTIVITY_PERSISTENCE" value="SHORT"/>
         <Option Id="DISPLAY_HINT" value="InputDisplay:LED;LED_Low:255,0,0,;LED_High:0,255,0,;"/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
-        <Option Id="HW_VIO" value="hw_vio_1"/>
+        <Option Id="HW_VIO" value="hw_vio_2"/>
         <Option Id="INPUT_VALUE_RADIX" value="BINARY"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
@@ -794,7 +2882,7 @@
         <Option Id="ACTIVITY_PERSISTENCE" value="SHORT"/>
         <Option Id="DISPLAY_HINT" value="InputDisplay:LED;LED_Low:255,0,0,;LED_High:0,255,0,;"/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
-        <Option Id="HW_VIO" value="hw_vio_1"/>
+        <Option Id="HW_VIO" value="hw_vio_2"/>
         <Option Id="INPUT_VALUE_RADIX" value="BINARY"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
@@ -809,7 +2897,7 @@
         <Option Id="ACTIVITY_PERSISTENCE" value="SHORT"/>
         <Option Id="DISPLAY_HINT" value="InputDisplay:LED;LED_Low:255,0,0,;LED_High:0,255,0,;"/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
-        <Option Id="HW_VIO" value="hw_vio_1"/>
+        <Option Id="HW_VIO" value="hw_vio_2"/>
         <Option Id="INPUT_VALUE_RADIX" value="BINARY"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
@@ -823,7 +2911,7 @@
       <probeOptions Id="DebugProbeParams">
         <Option Id="DISPLAY_HINT" value=""/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
-        <Option Id="HW_VIO" value="hw_vio_1"/>
+        <Option Id="HW_VIO" value="hw_vio_2"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="OUTPUT_VALUE" value="0"/>
@@ -840,7 +2928,7 @@
       <probeOptions Id="DebugProbeParams">
         <Option Id="DISPLAY_HINT" value="OutputDisplay:Toggle;"/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
-        <Option Id="HW_VIO" value="hw_vio_1"/>
+        <Option Id="HW_VIO" value="hw_vio_2"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="OUTPUT_VALUE" value="0"/>
@@ -855,7 +2943,7 @@
       <probeOptions Id="DebugProbeParams">
         <Option Id="DISPLAY_HINT" value=""/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
-        <Option Id="HW_VIO" value="hw_vio_1"/>
+        <Option Id="HW_VIO" value="hw_vio_2"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="OUTPUT_VALUE" value="2"/>
@@ -872,7 +2960,7 @@
       <probeOptions Id="DebugProbeParams">
         <Option Id="DISPLAY_HINT" value="OutputDisplay:Active_High;"/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
-        <Option Id="HW_VIO" value="hw_vio_1"/>
+        <Option Id="HW_VIO" value="hw_vio_2"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="OUTPUT_VALUE" value="0"/>
@@ -887,7 +2975,7 @@
       <probeOptions Id="DebugProbeParams">
         <Option Id="DISPLAY_HINT" value="OutputDisplay:Active_High;"/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
-        <Option Id="HW_VIO" value="hw_vio_1"/>
+        <Option Id="HW_VIO" value="hw_vio_2"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="OUTPUT_VALUE" value="0"/>
@@ -902,7 +2990,7 @@
       <probeOptions Id="DebugProbeParams">
         <Option Id="DISPLAY_HINT" value="OutputDisplay:Active_High;"/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
-        <Option Id="HW_VIO" value="hw_vio_1"/>
+        <Option Id="HW_VIO" value="hw_vio_2"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="OUTPUT_VALUE" value="0"/>
@@ -917,7 +3005,7 @@
       <probeOptions Id="DebugProbeParams">
         <Option Id="DISPLAY_HINT" value="OutputDisplay:Active_High;"/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
-        <Option Id="HW_VIO" value="hw_vio_1"/>
+        <Option Id="HW_VIO" value="hw_vio_2"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="OUTPUT_VALUE" value="0"/>
@@ -947,7 +3035,7 @@
       <probeOptions Id="DebugProbeParams">
         <Option Id="DISPLAY_HINT" value="OutputDisplay:Active_High;"/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
-        <Option Id="HW_VIO" value="hw_vio_1"/>
+        <Option Id="HW_VIO" value="hw_vio_2"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="OUTPUT_VALUE" value="0"/>
@@ -962,7 +3050,7 @@
       <probeOptions Id="DebugProbeParams">
         <Option Id="DISPLAY_HINT" value="OutputDisplay:Toggle;"/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
-        <Option Id="HW_VIO" value="hw_vio_1"/>
+        <Option Id="HW_VIO" value="hw_vio_2"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="OUTPUT_VALUE" value="1"/>
@@ -975,9 +3063,24 @@
     </probe>
     <probe type="vio_output" busType="net" source="netlist" spec="VIO_OUTPUT_V2_RT">
       <probeOptions Id="DebugProbeParams">
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_VIO" value="hw_vio_2"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="OUTPUT_VALUE" value="0"/>
+        <Option Id="OUTPUT_VALUE_RADIX" value="BINARY"/>
+        <Option Id="SOURCE" value="netlist"/>
+      </probeOptions>
+      <nets>
+        <net name="rxEncoding_from_vio"/>
+      </nets>
+    </probe>
+    <probe type="vio_output" busType="net" source="netlist" spec="VIO_OUTPUT_V2_RT">
+      <probeOptions Id="DebugProbeParams">
         <Option Id="DISPLAY_HINT" value="OutputDisplay:Active_High;"/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
-        <Option Id="HW_VIO" value="hw_vio_1"/>
+        <Option Id="HW_VIO" value="hw_vio_2"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="OUTPUT_VALUE" value="0"/>
@@ -992,7 +3095,7 @@
       <probeOptions Id="DebugProbeParams">
         <Option Id="DISPLAY_HINT" value=""/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
-        <Option Id="HW_VIO" value="hw_vio_1"/>
+        <Option Id="HW_VIO" value="hw_vio_2"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="OUTPUT_VALUE" value="1"/>
@@ -1006,12 +3109,27 @@
     </probe>
     <probe type="vio_output" busType="net" source="netlist" spec="VIO_OUTPUT_V2_RT">
       <probeOptions Id="DebugProbeParams">
-        <Option Id="DISPLAY_HINT" value="OutputDisplay:Toggle;"/>
+        <Option Id="DISPLAY_HINT" value=""/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
-        <Option Id="HW_VIO" value="hw_vio_1"/>
+        <Option Id="HW_VIO" value="hw_vio_2"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="OUTPUT_VALUE" value="0"/>
+        <Option Id="OUTPUT_VALUE_RADIX" value="BINARY"/>
+        <Option Id="SOURCE" value="netlist"/>
+      </probeOptions>
+      <nets>
+        <net name="txEncoding_from_vio"/>
+      </nets>
+    </probe>
+    <probe type="vio_output" busType="net" source="netlist" spec="VIO_OUTPUT_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="DISPLAY_HINT" value="OutputDisplay:Toggle;"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_VIO" value="hw_vio_2"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="OUTPUT_VALUE" value="1"/>
         <Option Id="OUTPUT_VALUE_RADIX" value="BINARY"/>
         <Option Id="SOURCE" value="netlist"/>
       </probeOptions>
@@ -1023,7 +3141,7 @@
       <probeOptions Id="DebugProbeParams">
         <Option Id="DISPLAY_HINT" value="OutputDisplay:Active_High;"/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
-        <Option Id="HW_VIO" value="hw_vio_1"/>
+        <Option Id="HW_VIO" value="hw_vio_2"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="OUTPUT_VALUE" value="0"/>
@@ -1038,7 +3156,7 @@
       <probeOptions Id="DebugProbeParams">
         <Option Id="DISPLAY_HINT" value=""/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
-        <Option Id="HW_VIO" value="hw_vio_1"/>
+        <Option Id="HW_VIO" value="hw_vio_2"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="OUTPUT_VALUE" value="0"/>

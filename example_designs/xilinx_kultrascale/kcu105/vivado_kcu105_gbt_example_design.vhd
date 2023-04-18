@@ -292,6 +292,7 @@ architecture structural of kcu105_gbt_example_design is
         PROBE3: in std_logic_vector(0 downto 0)
      );
      END COMPONENT;
+
      
      COMPONENT xlx_ku_vio
        PORT (
@@ -347,6 +348,20 @@ architecture structural of kcu105_gbt_example_design is
          
    --================--
    signal sysclk:                    std_logic;  
+
+
+   COMPONENT vio_tx
+     PORT (
+       clk : IN STD_LOGIC;
+       probe_out0 : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
+       probe_out1 : OUT STD_LOGIC_VECTOR(79 DOWNTO 0);
+       probe_out2 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+     );
+   END COMPONENT;
+   signal static_pattern_scec_s : std_logic_vector( 1 downto 0);
+   signal static_pattern_data_s : std_logic_vector(79 downto 0);
+   signal static_pattern_extradata_widebus_s : std_logic_vector(31 downto 0);
+
           
    --=====================================================================================--  
 --=================================================================================================--
@@ -364,8 +379,8 @@ begin                 --========####   Architecture Body   ####========--
    --===============--
    -- General reset -- 
    --===============--
-   
-   genRst: entity work.xlx_ku_reset
+   -- JB: Reset is issued after CLK_FREQ
+   genRst: entity work.xlx_ku_reset 
       generic map (
          CLK_FREQ                                    => 156e6)
       port map (     
@@ -382,7 +397,8 @@ begin                 --========####   Architecture Body   ####========--
    -- Fabric clock:
    ----------------
    
-   -- Comment: USER_CLOCK frequency: 156MHz 
+   -- Comment: USER_CLOCK frequency: 156MHz
+   -- JB: USER_CLOCK is actually 125 MHz. Used for VIO and GTH_DPR.
    
    userClockIbufgds: ibufgds
       generic map (
@@ -400,6 +416,10 @@ begin                 --========####   Architecture Body   ####========--
    -- Comment: * The MGT reference clock MUST be provided by an external clock generator.
    --
    --          * The MGT reference clock frequency must be 120MHz for the latency-optimized GBT Bank. 
+   -- JB: Set reference clock to 40.0789 * 3 = 120.237 MHz
+   -- JB: O goes to tranceiver reference clock
+   -- JB: O freq == ODIV2 freq when REFCLK_HROW_CK_SEL = 00
+   -- JB: ODIV2 goes to ...
 
    smaMgtRefClkIbufdsGtxe2: ibufds_gte3
       generic map(
@@ -429,6 +449,9 @@ begin                 --========####   Architecture Body   ####========--
          CEMASK                                   => '0'
       ); 
       
+    -- JB: Creates phase shifted clock (txFrameClk_from_txPll)
+    -- JB: SHIFT_IN starts phase shift
+    -- JB: SHIFT_COUNT_IN is number of phase shifts. Phase is shifted by 1/32 of VCO period.
     txFrameclkGen_inst: entity work.xlx_ku_tx_phaligner
         Port map( 
             -- Reset
@@ -554,7 +577,15 @@ begin                 --========####   Architecture Body   ####========--
        GBTBANK_LOOPBACK_I                                        => loopBack_from_user, --
        
        GBTBANK_TX_POL(1)                                         => '0',
-       GBTBANK_RX_POL(1)                                         => '0'
+       GBTBANK_RX_POL(1)                                         => '0',
+
+		--==============--
+		-- TX VIO       --
+		--==============--
+        STATIC_PATTERN_SCEC_I                                    => static_pattern_scec_s,
+        STATIC_PATTERN_DATA_I                                    => static_pattern_data_s,
+        STATIC_PATTERN_EXTRADATA_WIDEBUS_I                       => static_pattern_extradata_widebus_s
+
   ); 
    --=====================================--
    -- BER                                 --
@@ -585,6 +616,7 @@ begin                 --========####   Architecture Body   ####========--
    gbtModifiedBitFlagFiltered(83 downto 0) <= gbtModifiedBitFlag when gbtRxReady_from_gbtExmplDsgn = '1' else
                                               (others => '0');
    
+   -- JB: Counts the number of '1' in bit vector.
    countOnesCorrected: entity work.CountOnes
        Generic map (SIZE           => 128,
                     MAXOUTWIDTH        => 8
@@ -694,6 +726,15 @@ begin                 --========####   Architecture Body   ####========--
            
         end if;
     end process;
+
+    vio_tx_i : vio_tx
+      PORT MAP (
+        clk => txFrameClk_from_gbtExmplDsgn,
+        probe_out0 => static_pattern_scec_s,
+        probe_out1 => static_pattern_data_s,
+        probe_out2 => static_pattern_extradata_widebus_s
+      );
+
       
     vio : xlx_ku_vio
        PORT MAP (

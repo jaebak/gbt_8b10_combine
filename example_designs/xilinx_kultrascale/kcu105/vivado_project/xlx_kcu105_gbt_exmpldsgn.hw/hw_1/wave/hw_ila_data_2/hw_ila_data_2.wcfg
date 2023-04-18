@@ -3,47 +3,87 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="D:/GBT-FPGA/gbt/example_designs/xilinx_kultrascale/kcu105/vivado_project/xlx_kcu105_gbt_exmpldsgn.hw/hw_1/wave/hw_ila_data_2/hw_ila_data_2.wdb" id="1">
+      <db_ref path="/higgs-data/jbkim/odmb/optics_session/github/scratch/g_0.01_gbt-fpga_ila/example_designs/xilinx_kultrascale/kcu105/vivado_project/xlx_kcu105_gbt_exmpldsgn.hw/hw_1/wave/hw_ila_data_2/hw_ila_data_2.wdb" id="1">
          <top_modules>
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="3571fs"></ZoomEndTime>
+      <ZoomEndTime time="1025fs"></ZoomEndTime>
       <Cursor1Time time="0fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="270"></NameColumnWidth>
-      <ValueColumnWidth column_width="276"></ValueColumnWidth>
+      <ValueColumnWidth column_width="272"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="4" />
-   <wvobject fp_name="txData_from_gbtExmplDsgn" type="array">
+   <WVObjectSize size="9" />
+   <wave_markers>
+   </wave_markers>
+   <wvobject type="logic" fp_name="gbt_rxclkenLogic_s">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">txData_from_gbtExmplDsgn[83:0]</obj_property>
-      <obj_property name="ObjectShortName">txData_from_gbtExmplDsgn[83:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">gbt_rxclkenLogic_s</obj_property>
+      <obj_property name="ObjectShortName">gbt_rxclkenLogic_s</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="txExtraDataWidebus_from_gbtExmplDsgn" type="array">
+   <wvobject type="array" fp_name="gbt_rxdata_s">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">txExtraDataWidebus_from_gbtExmplDsgn[31:0]</obj_property>
-      <obj_property name="ObjectShortName">txExtraDataWidebus_from_gbtExmplDsgn[31:0]</obj_property>
+      <obj_property name="ElementShortName">gbt_rxdata_s[83:0]</obj_property>
+      <obj_property name="ObjectShortName">gbt_rxdata_s[83:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="txIsDataSel_from_user_1" type="logic">
+   <wvobject type="logic" fp_name="gbt_rxready_s">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">txIsDataSel_from_user_1</obj_property>
-      <obj_property name="ObjectShortName">txIsDataSel_from_user_1</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">gbt_rxready_s</obj_property>
+      <obj_property name="ObjectShortName">gbt_rxready_s</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="PROBE3" type="logic">
+   <wvobject type="logic" fp_name="gbtbank_gbtrxready_lost_flag_s">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">PROBE3</obj_property>
-      <obj_property name="ObjectShortName">PROBE3</obj_property>
+      <obj_property name="ElementShortName">gbtbank_gbtrxready_lost_flag_s</obj_property>
+      <obj_property name="ObjectShortName">gbtbank_gbtrxready_lost_flag_s</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="gbtbank_rx_bitmodified_flag_s">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">gbtbank_rx_bitmodified_flag_s[83:0]</obj_property>
+      <obj_property name="ObjectShortName">gbtbank_rx_bitmodified_flag_s[83:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="gbtbank_rx_errordetected_s">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">gbtbank_rx_errordetected_s</obj_property>
+      <obj_property name="ObjectShortName">gbtbank_rx_errordetected_s</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="gbtbank_rx_isdata_sel_s">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">gbtbank_rx_isdata_sel_s</obj_property>
+      <obj_property name="ObjectShortName">gbtbank_rx_isdata_sel_s</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="mgt_headerflag_s">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">mgt_headerflag_s</obj_property>
+      <obj_property name="ObjectShortName">mgt_headerflag_s</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="wb_rxdata_s">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">wb_rxdata_s[31:0]</obj_property>
+      <obj_property name="ObjectShortName">wb_rxdata_s[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
 </wave_config>
